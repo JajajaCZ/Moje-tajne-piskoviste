@@ -32,7 +32,8 @@ body {
     position: sticky;
     top: 10px;
     z-index: 100;
-    max-width: 700px;
+    width: 80%;
+    max-width: 1000px;
     display: flex;
     text-align: center;
     margin: 0 auto 30px auto;
@@ -63,7 +64,8 @@ body {
 }
 
 .card {
-    max-width: 700px;
+    width: 80%;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: #1e293b;
     padding: 30px;
@@ -85,5 +87,5 @@ body {
     display: block;
     margin-top: 10px;
     text-align: right;
-    color: #94a3b8;
+    color: var(--text-muted);
 }
