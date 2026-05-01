@@ -22,7 +22,17 @@ body {
 }
 
 .navbar a {
-    
+    color: #f1f5f9;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.navbar a :hover {
+    color: #4db8ff;
+    text-decoration: underline;
 }
 
 .card {
