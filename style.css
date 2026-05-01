@@ -16,6 +16,15 @@ body {
     margin: 0;
 }
 
+.navbar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.navbar a {
+    
+}
+
 .card {
     max-width: 700px;
     margin: 0 auto;
