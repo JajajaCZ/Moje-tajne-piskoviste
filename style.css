@@ -1,7 +1,41 @@
+body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    font-family:'Inter', system-ui, sans-serif; 
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1{
+    color: #4db8ff;
+    margin: 0;
+}
+
 .card {
     max-width: 700px;
     margin: 0 auto;
     background-color: #f0f0f0;
     padding: 20px;
     border: 1px solid #ccc;
+}
+
+.lulu-quote {
+    color: blueviolet;
+    border-left: 5px solid blueviolet;
+    padding-left: 15px;
+    display: inline-block;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.lulu-quote cite {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    color: #94a3b8;
 }
