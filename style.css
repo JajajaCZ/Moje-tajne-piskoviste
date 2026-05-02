@@ -91,7 +91,7 @@ body {
     margin: 0 auto;
     align-items: flex-start;
 }
-.sidebar{
+.sidebar, .toplist-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,21 +104,8 @@ body {
     border: 1px solid var(--border);
 }
 
-.sidebar img {
-    width: 90%;
-    max-width: 230px;
-    border-radius: 8px;
-    margin: 0 auto 15px auto;
-}
-
-.toplist-container {
-    display: flex;
-    justify-content: center; /* Vycentruje ikonku na střed sidebaru */
-    margin: 0 auto 15px auto;
-    width: 90%;
-}
-
-.toplist-container img {
+.sidebar img, .toplist-container img {
+    width: 90%;{
     width: 90%;
     max-width: 230px;
     border-radius: 8px;
