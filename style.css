@@ -45,6 +45,9 @@ body {
 
 .navbar {
     position: sticky;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     top: 10px;
     z-index: 100;
     width: 80%;
