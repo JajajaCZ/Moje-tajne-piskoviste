@@ -119,8 +119,10 @@ body {
 }
 
 .toplist-container img {
-    border-radius: 4px; /* Lehce zaoblíme rohy, aby to nevypadalo tak retro */
-    display: block;
+    width: 90%;
+    max-width: 230px;
+    border-radius: 8px;
+    margin: 0 auto 15px auto;
 }
 
 .card {
