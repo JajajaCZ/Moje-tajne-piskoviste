@@ -51,7 +51,7 @@ body {
     top: 10px;
     z-index: 100;
     width: 80%;
-    max-width: 1500px;
+    max-width: 1250px;
     display: flex;
     text-align: center;
     margin: 0 auto 30px auto;
@@ -97,7 +97,7 @@ body {
     align-items: center;
     text-align: center;
     min-width: 128px;
-    flex: 0 0 10%;
+    flex: 0 0 20%;
     background-color: var(--bg-card);
     padding: 20px;
     border-radius: 12px;
