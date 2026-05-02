@@ -93,6 +93,18 @@ body {
     margin: 0 auto 15px auto;
 }
 
+.toplist-container {
+    display: flex;
+    justify-content: center; /* Vycentruje ikonku na střed sidebaru */
+    margin: 0 auto 15px auto;
+    width: 90%;
+}
+
+.toplist-container img {
+    border-radius: 4px; /* Lehce zaoblíme rohy, aby to nevypadalo tak retro */
+    display: block;
+}
+
 .card {
     flex: 1;
     width: 80%;
