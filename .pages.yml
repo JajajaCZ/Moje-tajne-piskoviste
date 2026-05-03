@@ -5,10 +5,15 @@ content:
     path: clanky
     format: markdown
     filename: "{{number padding=5}}-{{slug title}}"
+    media:
+        input: img
+        output: img
     fields:
       - name: title
         label: Nadpis
         type: string
+
+      
 
       - name: date
         label: Datum
@@ -52,6 +57,7 @@ content:
           blockquote: true
           code: true
           media: true
+          path: img
 
       - name: url
         label: URL
