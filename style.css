@@ -83,59 +83,48 @@ body {
     margin-bottom: 15px;
 }
 
+* Box statistik sjednocený s designem */
 .panda-stats-box {
-    background-color: var(--bg-card); /* Sjednocení s designem */
-    border: 1px solid var(--border);   /* Sjednocení s designem */
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    background-color: var(--bg-card) !important; /* Tmavé pozadí podle webu */
+    border: 1px solid var(--border) !important;   /* Tenký rámeček */
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
 }
 
-/* Tabulka pro přesné rozmístění emoji */
+/* Tabulka, která drží bambusy po stranách */
 .panda-grid {
-    border-collapse: collapse;
-    text-align: center;
+    border-collapse: collapse !important;
+    width: auto !important;
 }
 
 .panda-grid td {
-    padding: 5px;
-    font-size: 1.2rem;
-    vertical-align: middle;
+    padding: 10px !important; /* Prostor pro emoji */
+    font-size: 1.5rem !important;
+    vertical-align: middle !important;
+    text-align: center !important;
 }
 
-/* Prostřední buňka s TOPlistem */
-.toplist-cell {
-    padding: 10px !important;
-}
-
-.toplist-container {
-    background: #fff; /* Bílé pozadí jen pro čitelnost tabulky */
-    padding: 5px;
-    border-radius: 4px;
-    line-height: 0;
-    display: inline-block;
-}
-
+/* Samotný TOPlist - Zvětšený a Ostrý */
 .toplist-container img {
-    width: 88px !important;  /* Původní fyzická šířka */
-    height: 120px !important; /* Původní fyzická výška */
-    display: block;
+    width: 88px !important;
+    height: 120px !important;
+    display: block !important;
     
-    /* Zvětšení bez rozmazání */
-    transform: scale(1.2);    /* Zvětší tabulku o 20 % */
-    transform-origin: center; /* Zvětšuje se rovnoměrně ze středu */
+    /* Zvětšení o 30%[cite: 1] */
+    transform: scale(1.3) !important; 
     
-    /* Klíčové pro ostrost */
-    image-rendering: pixelated;   /* Pro Chrome/Edge/Safari */
-    image-rendering: crisp-edges; /* Pro Firefox */
+    /* Vynucení ostrosti hran[cite: 1] */
+    image-rendering: pixelated !important;
+    image-rendering: crisp-edges !important;
 }
 
-/* Aby se zvětšený obrázek netloukl s emoji, přidáme buňce trochu místa */
+/* Aby zvětšený TOPlist nepřekryl emoji[cite: 1] */
 .toplist-cell {
-    padding: 25px !important; /* Větší padding udělá místo pro zvětšený scale */
+    padding: 30px !important;
 }
 /* Main Content Card */
 .card {
