@@ -109,33 +109,33 @@ body {
 .toplist-container {
     background: transparent !important;
     box-shadow: none !important;
-    display: inline-block;
+    display: block !important; /* Block je pro stabilitu v sidebaru lepší */
+    
+    /* ROZMĚRY +20 % (Původní 102x88 -> Nové cca 122x106) */
+    width: 122px !important; 
+    height: 106px !important; 
+    
+    /* Vycentrování v rámci tlapkové karty */
+    margin: 15px auto 0 auto !important; 
+    
     line-height: 0;
-    
-    /* Zpět na automatiku, aby skript věděl, kolik místa má */
-    width: auto; 
-    height: auto; 
-    
-    /* Vizuální zvětšení o 20 % */
-    transform: scale(1.2);
-    transform-origin: center;
-    
-    /* Odstup od horních tlapek */
-    margin-top: 15px; 
+    overflow: visible;
+    transform: none !important; /* Zrušíme scale, který způsoboval to cestování */
 }
 
 .toplist-container img.counterimg {
-    /* Vynutíme zobrazení a ostrost */
+    /* Obrázek se teď roztáhne na celou šířku kontejneru (těch 122px) */
+    width: 100% !important;
+    height: 100% !important;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
     
-    /* Necháme ho v původním rozměru, zvětší ho ten transform nahoře */
-    width: 102px !important;
-    height: 88px !important;
-    
+    /* Vynucení ostrosti */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* --- OPRAVA PRO MOBILY --- */
