@@ -180,16 +180,19 @@ sidebar-box {
 }
 
 .toplist-wrapper {
-    
-    /* Větší bílý okraj zlepší kontrast a čitelnost */
-    padding: 12px; 
+    background: #ffffff;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    
-    display: block !important;
-    line-height: 0 !important;
-    max-width: 200px;
-    max-height: 200px;
+    display: inline-block !important; /* Zabrání roztažení do výšky */
+    height: auto !important;
+    width: auto !important;
+    overflow: hidden;
+    line-height: normal !important;
+}
+.toplist-container * {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .toplist-wrapper img {
