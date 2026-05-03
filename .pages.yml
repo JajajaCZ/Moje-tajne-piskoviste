@@ -11,7 +11,7 @@ content:
       - name: date
         label: Datum
         type: date
-      - name: tags
+      - name: tag
         label: Tag
         type: select
         options:
