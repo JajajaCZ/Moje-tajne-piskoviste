@@ -85,26 +85,20 @@ body {
 }
 
 .stats-card.emoji-pattern {
-    /* ... ostatní vlastnosti zůstávají ... */
-
-    /* ZVÝŠENÍ HORNÍHO PADDINGU:
-       První číslo (50px) je teď prostor nahoře a dole. 
-       Díky tomu, že rozestup tlapek je taky 50px, 
-       vleze se tam přesně jedna řada navíc. */
-    padding: 50px 0 !important; 
-    
-    /* Mírně zvýšíme min-height, aby se tam ty tlapky měly kam vejít */
-    min-height: 200px; 
-    
     background-color: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
     width: 208px;
     margin: 0 auto 15px auto;
     
+    /* Vzor tlapek (50px rozestup) */
     background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='12' y='35' font-size='18'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
-    background-repeat: round; 
     background-size: 50px 50px;
+    background-repeat: round; 
+
+    /* KLÍČOVÁ ZMĚNA: Fixní výška zajistí přesně 4 řady */
+    height: 200px !important; 
+    padding: 0 !important; /* Padding už nepotřebujeme, o střed se postará flexbox */
     
     display: flex !important;
     justify-content: center !important;
@@ -115,7 +109,6 @@ body {
 .toplist-container {
     background: transparent !important;
     box-shadow: none !important;
-    padding: 0;
     transform: none !important; 
     display: inline-block;
     line-height: 0;
