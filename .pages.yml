@@ -1,5 +1,5 @@
 content:
-  - name: clanky
+  - name: prispevky
     label: Články
     type: collection
     path: clanky
