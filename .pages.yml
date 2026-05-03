@@ -5,6 +5,13 @@ content:
     path: clanky
     filename: "clanek"
     format: markdown
+    list:
+      - title
+      - date
+      - releaseDate
+      - releaseTime
+      - tags
+      - desc
     
     media:
       input: img
@@ -46,7 +53,7 @@ content:
         type: text
 
       - name: body
-        label: Obsah článku
+        #label: Obsah článku
         type: rich-text
         options:
           image: true
@@ -61,6 +68,6 @@ content:
           media: true
 
       - name: url
-        label: URL
+        #label: URL
         type: string
         default: https://jajajacz.github.io/Moje-tajne-piskoviste/
