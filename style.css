@@ -106,6 +106,19 @@ body {
     box-sizing: border-box;
 }
 
+.toplist-container {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important; 
+    display: inline-block;
+    line-height: 0;
+
+    /* JEMNÉ POSUNUTÍ DOLŮ: 
+       Upravuj tohle číslo (třeba 5px, 8px, 10px), 
+       dokud to nebude lahodit tvému oku. */
+    margin-top: 8px; 
+}
+
 /* --- OPRAVA PRO MOBILY --- */
 @media (max-width: 768px) {
     .stats-card.emoji-pattern {
@@ -120,6 +133,7 @@ body {
     
     .toplist-container {
         transform: scale(0.9); /* Na mobilu počítadlo trošku zmenšíme, ať nepřetéká */
+        margin-top: 8px;
     }
 }
 
