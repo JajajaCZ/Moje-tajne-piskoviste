@@ -16,9 +16,9 @@ content:
 
       - name: releaseDate
         label: Datum a čas vydání
-        type: datetime
-        options:
-          format: "dd.MM.yyyy HH:mm"
+        type: string
+        placeholder: "2026-05-03 15:30"
+        help: "Formát: RRRR-MM-DD HH:MM"
 
       - name: tags
         label: Tagy
