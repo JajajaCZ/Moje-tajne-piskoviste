@@ -130,30 +130,56 @@ body {
     box-sizing: border-box;
 }
 
+sidebar-box {
+    /* Kopírujeme vzhled profilovky ze screenshotu */
+    background-color: var(--bg-card); /* Tmavý podklad tvé karty */
+    border: 1px solid var(--border);   /* Linka okolo */
+    border-radius: 12px;               /* Zaoblení rohů */
+    
+    /* Přesné rozměry podle tooltipu na obrázku */
+    width: 208px;                      /* Zaokrouhleno z 207.78 */
+    margin-bottom: 15px;               /* Oranžový margin ze screenshotu */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Vzor tlapek - hustší a neosekaný */
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='4' y='18' font-size='14'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
+    background-repeat: round; 
+    background-size: 25px 25px; 
+    
+    /* Vycentrování obsahu (TOPlistu) */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* Širší a kratší vzhled */
+    padding: 15px 10px !important; 
+    min-height: 160px;                 /* Aby to nebylo moc vysoké */
+    box-sizing: border-box;
+}
+
 .toplist-wrapper {
     background: #ffffff;
-    padding: 8px;
+    padding: 6px;
     border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     
-    /* Vynutíme, aby se wrapper choval jako blok bez textu */
+    /* Totální vycentrování vnitřku */
     display: block !important;
     line-height: 0 !important;
     font-size: 0 !important;
-    overflow: hidden; /* Odstřihne jakékoli neviditelné přetoky */
+    z-index: 1;
 }
 
 .toplist-wrapper img {
-    /* Zvětšení a ostrost[cite: 1] */
-    width: 114px !important;
-    height: 156px !important;
+    /* Ostré a velké statistiky */
+    width: 88px !important;
+    height: 120px !important;
+    display: block !important;
+    margin: 0 !important;
     
-    /* TADY JE TA OPRAVA:[cite: 1, 5] */
-    display: block !important; /* Zruší chování písmene */
-    margin: 0 !important;       /* Zruší jakékoli okraje[cite: 1] */
-    
-    transform: scale(1.1); 
-    image-rendering: pixelated;[cite: 1]
+    transform: scale(1.05); /* Mírné zvětšení */
+    image-rendering: pixelated; /* Proti rozmazání */
 }
 .toplist-wrapper:hover {
     transform: scale(1.05); /* Jemný efekt při najetí myší */
