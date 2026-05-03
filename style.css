@@ -1,3 +1,4 @@
+/* --- ZÁKLADNÍ NASTAVENÍ --- */
 :root {
     --bg-dark: #0f172a;
     --bg-card: #1e293b;
@@ -17,7 +18,18 @@ body {
     padding: 40px 20px;
 }
 
-/* Navbar */
+/* --- LAYOUT --- */
+.maincontainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* --- NAVBAR --- */
 .navbar {
     position: sticky;
     top: 10px;
@@ -52,18 +64,7 @@ body {
     border-color: var(--accent);
 }
 
-/* Layout */
-.maincontainer {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    align-items: flex-start;
-}
-
-/* Sidebar & Red Panda Reservoir */
+/* --- SIDEBAR --- */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -78,140 +79,65 @@ body {
 
 .sidebar img {
     width: 100%;
-    max-width: 230px;
+    max-width: 230px; /* Šířka profilovky */
     border-radius: 8px;
     margin-bottom: 15px;
 }
 
-
-/* Karta pro statistiky */
-.stats-card {
-    background-color: var(--bg-card); /* Tmavší modrá z tvého webu */
-    border: 1px solid var(--border);   /* Jemný okraj[cite: 1] */
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Nadpis nad statistikami */
-.stats-label {
-    color: var(--accent); /* Tvoje světle modrá[cite: 1] */
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-}
-
-.emoji-pattern {
+/* --- STATISTIKY (Nový vyčištěný box) --- */
+.stats-card.emoji-pattern {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
     
-    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='22' font-size='16'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
-    background-repeat: round; 
-    background-size: 30px 30px; 
-    
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    
-    /* Nastavíme pevnou šířku a automatickou výšku */
-    width: 208px; 
-    padding: 20px 0 !important; 
-    margin: 15px auto;
-    box-sizing: border-box;
-}
-
-sidebar-box {
-    /* Kopírujeme vzhled profilovky ze screenshotu */
-    background-color: var(--bg-card); /* Tmavý podklad tvé karty */
-    border: 1px solid var(--border);   /* Linka okolo */
-    border-radius: 12px;               /* Zaoblení rohů */
-    
-    /* Přesné rozměry podle tooltipu na obrázku */
-    width: 208px;                      /* Zaokrouhleno z 207.78 */
-    margin-bottom: 15px;               /* Oranžový margin ze screenshotu */
-    margin-left: auto;
-    margin-right: auto;
-    
-    /* Vzor tlapek - hustší a neosekaný */
-    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='4' y='18' font-size='14'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
-    background-repeat: round; 
-    background-size: 25px 25px; 
-    
-    /* Vycentrování obsahu (TOPlistu) */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    
-    /* Širší a kratší vzhled */
-    padding: 15px 10px !important; 
-    min-height: 160px;                 /* Aby to nebylo moc vysoké */
-    box-sizing: border-box;
-}
-
-.sidebar-box {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    
-    /* Šířka přesně podle profilovky z image_e28225.png */
+    /* Šířka přesně podle profilovky (image_e28225.png) */
     width: 208px;
     margin: 0 auto 15px auto;
     
-    /* Vzor tlapek - vrátíme kousek větší rozestup, ať to neruší oči */
+    /* Vzor tlapek - čitelný a neosekaný */
     background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='8' y='25' font-size='16'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
     background-repeat: round; 
     background-size: 35px 35px; 
     
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    /* Vycentrování */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    /* Box uděláme trochu vyšší, aby statistiky měly "vzduch" a lépe se četly */
-    padding: 25px 10px !important; 
-    box-sizing: border-box;
+    /* Výška a odsazení */
+    padding: 25px 0; 
+    min-height: 180px;
 }
 
-.toplist-wrapper {
+/* Bílá karta počitadla */
+.toplist-container {
     background: #ffffff;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    display: inline-block !important; /* Zabrání roztažení do výšky */
-    height: auto !important;
-    width: auto !important;
-    overflow: hidden;
-    line-height: normal !important;
-}
-.toplist-container * {
-    margin: 0 !important;
-    padding: 0 !important;
+    
+    /* OPRAVA BÍLÉ NUDLE: */
+    display: inline-block;
+    height: auto;
+    width: auto;
+    line-height: 0; /* Odstraní místo pod obrázkem/iframe */
+    transition: 0.3s;
 }
 
-.toplist-wrapper img {
-    /* PŘESNÉ ROZMĚRY BEZ ZVĚTŠOVÁNÍ (pro 100% ostrost) */
-   
-    display: block !important;
-    
-    /* Odstraníme transform, který způsoboval to rozmazání */
-    transform: none !important; 
-    
-    /* Vynutíme nejostřejší možný rendering pro malé texty */
-    image-rendering: -webkit-optimize-contrast;
+.toplist-container:hover {
+    transform: scale(1.05);
+}
+
+/* Vynucení ostrosti pro jakékoli počitadlo */
+.toplist-container img, 
+.toplist-container iframe {
+    display: block;
+    margin: 0;
+    image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
-.toplist-wrapper:hover {
-    transform: scale(1.05); /* Jemný efekt při najetí myší */
-}
 
-/* Main Content Card */
+/* --- HLAVNÍ OBSAH --- */
 .card {
     flex: 1;
     background-color: var(--bg-card);
@@ -224,7 +150,7 @@ sidebar-box {
 .banner { max-width: 100%; border-radius: 20px; transition: 0.3s; }
 .banner:hover { transform: scale(1.02); }
 
-/* Post Grid */
+/* --- GRID ČLÁNKŮ --- */
 .post-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -237,7 +163,7 @@ sidebar-box {
     position: relative;
     aspect-ratio: 2.5 / 3.5;
     background-size: cover;
-    border: 8px solid #e5c100;
+    border: 8px solid #e5c100; /* Zlatý okraj karet */
     border-radius: 15px;
     overflow: hidden;
     transition: 0.3s;
