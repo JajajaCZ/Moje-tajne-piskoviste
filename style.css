@@ -83,28 +83,7 @@ body {
     margin-bottom: 15px;
 }
 
-.emoji-pattern {
-    background-color: var(--bg-card); /* */
-    border: 1px solid var(--border);   /* */
-    border-radius: 12px;
-    
-    /* Vzor tlapek */
-    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='22' font-size='16'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
-    
-    /* KLÍČOVÁ ZMĚNA: round zajistí, že tlapky nebudou oříznuté */
-    background-repeat: round; 
-    background-size: 30px 30px; 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Padding určuje, kolik řad tlapek uvidíš kolem TOPlistu */
-    padding: 30px; 
-    width: fit-content; 
-    margin: 15px auto;
-    box-sizing: border-box;
-}
+
 /* Karta pro statistiky */
 .stats-card {
     background-color: var(--bg-card); /* Tmavší modrá z tvého webu */
@@ -129,27 +108,40 @@ body {
     margin-bottom: 12px;
 }
 
+.emoji-pattern {
+    position: relative; /* Nutné pro absolutní pozicování vnitřku */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='5' y='22' font-size='16'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
+    background-repeat: round; 
+    background-size: 30px 30px; 
+    
+    /* Box bude mít pevnější rozměr, aby se tlapky nerozházely */
+    width: 180px; 
+    height: 200px; 
+    margin: 15px auto;
+    
+    /* Vycentrování celého boxu v sidebaru */
+    display: block; 
+}
+
 .toplist-wrapper {
     background: #ffffff;
     padding: 8px;
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     
-    /* Vynucené vycentrování */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    /* ABSOLUTNÍ STŘED */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Toto ho posune přesně na střed */
     
-    /* Odstranění neviditelného místa pod obrázkem */
     line-height: 0 !important;
-    font-size: 0 !important; 
-    
-    /* KOMPENZACE: Pokud je stále moc nahoře, 
-       jemně ho posuneme dolů tímto: */
-    padding-top: 10px; 
-    padding-bottom: 6px;
-    
-    z-index: 1;
+    display: block !important;
+    z-index: 10;
 }
 
 .toplist-wrapper:hover {
