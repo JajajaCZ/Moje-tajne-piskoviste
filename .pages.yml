@@ -11,8 +11,8 @@ content:
       - name: date
         label: Datum
         type: date
-      - name: tags
-        label: Tagy (vyber více)
+      - name: tag
+        label: Tagy
         type: multiselect
         options:
           - Novinka
