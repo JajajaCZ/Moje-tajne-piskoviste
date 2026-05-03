@@ -1,27 +1,54 @@
 content:
-  - name: clanky
+  pages:
+    label: Stránky
+    type: collection
+    path: content/pages
+    fields:
+      title:
+        label: Název
+        type: text
+
+      slug:
+        label: URL slug
+        type: slug
+        from: title
+
+      body:
+        label: Obsah
+        type: rich-text
+
+      published:
+        label: Publikováno
+        type: boolean
+        default: false
+
+  clanky:
     label: Články
     type: collection
     path: clanky
     format: json
     fields:
-      - name: title
+      title:
         label: Nadpis
         type: string
-      - name: date
+
+      date:
         label: Datum
         type: date
-      - name: tags
+
+      tag:
         label: Tagy
-        type: select
+        type: multiselect
         options:
           - Novinka
           - Projekt
           - Linux
           - Ostatní
-      - name: desc
+
+      desc:
         label: Krátký popis
         type: text
-      - name: url
+
+      url:
         label: URL
         type: string
