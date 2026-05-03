@@ -1,26 +1,4 @@
 content:
-  pages:
-    label: Stránky
-    type: collection
-    path: content/pages
-    fields:
-      title:
-        label: Název
-        type: text
-
-      slug:
-        label: URL slug
-        type: slug
-        from: title
-
-      body:
-        label: Obsah
-        type: rich-text
-
-      published:
-        label: Publikováno
-        type: boolean
-        default: false
 
   clanky:
     label: Články
