@@ -14,7 +14,7 @@ content:
         type: date
 
       - name: tags
-        label: Tagy1
+        label: Tagyyyyy1
         type: select
         options:
           multiple: true
