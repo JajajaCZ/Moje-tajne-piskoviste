@@ -88,8 +88,6 @@ body {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    
-    /* Šířka podle profilovky */
     width: 208px;
     margin: 0 auto 15px auto;
     
@@ -98,42 +96,38 @@ body {
     background-repeat: round; 
     background-size: 35px 35px; 
     
+    /* Dokonalý střed */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     
-    padding: 25px 0 !important; 
+    /* KOMPENZACE: Padding upravíme tak, aby to nebylo moc nahoře */
+    padding: 35px 0 !important; 
     min-height: 180px;
     box-sizing: border-box;
 }
 
 .toplist-container {
-    /* PRYČ S BÍLÝM POZADÍM A STÍNEM */
-    background: transparent !important; 
+    background: transparent !important;
     box-shadow: none !important;
     padding: 0;
     
-    /* ROZTAHOVÁNÍ:
-       Pokud chceš počítadlo větší, změň 1.2 na vyšší číslo (např. 1.5).
-       Díky 'pixelated' by to mělo zůstat relativně ostré. */
-    transform: scale(1.2); 
-    transform-origin: center;
-    
+    /* KONEC ROZMAZÁNÍ: Vracíme na původní velikost pro 100% ostrost */
+    transform: none !important; 
     display: inline-block;
     line-height: 0;
 }
 
+/* Útok na bílé pozadí uvnitř počítadla */
 .toplist-container img, 
 .toplist-container iframe,
-.toplist-container table {
+.toplist-container table,
+.toplist-container td {
     display: block;
-    image-rendering: pixelated; /* Udržuje ostrost při zvětšení */
-    background-color: transparent !important; /* Vynutí průhlednost i u tabulek */
+    background-color: transparent !important; /* Pokus o vynucení průhlednosti */
+    border: none !important;
+    image-rendering: pixelated;
 }
-.toplist-container:hover {
-    transform: scale(1.05);
-}
-
 
 /* --- HLAVNÍ OBSAH --- */
 .card {
