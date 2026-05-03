@@ -1,5 +1,5 @@
 ---
-layout: default
+# Prázdný Front Matter taky funguje, aktivuje Jekyll, ale nic nehledá
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ layout: default
 <body>
     
     <nav class="navbar">
-        <a href="index.html">Domů</a>
+        <a href="{{ '/' | relative_url }}">Domů</a>
         <a href="{{ '/clanky/' | relative_url }}">Články</a>
         <a href="https://github.com/JajajaCZ?tab=repositories" target="_blank">Projekty</a>
         <a href="https://github.com/JajajaCZ" target="_blank">Můj GitHub</a>
