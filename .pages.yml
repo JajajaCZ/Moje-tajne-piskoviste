@@ -15,10 +15,14 @@ content:
         type: date
 
       - name: releaseDate
-        label: Datum a čas vydání
+        label: Datum vydání
+        type: date
+
+      - name: releaseTime
+        label: Čas vydání
         type: string
-        placeholder: "2026-05-03 15:30"
-        help: "Formát: RRRR-MM-DD HH:MM"
+        placeholder: "15:30"
+        help: "Hodiny:Minuty (např. 09:00 nebo 23:30)"
 
       - name: tags
         label: Tagy
