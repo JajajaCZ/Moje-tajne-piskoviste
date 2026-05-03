@@ -182,7 +182,7 @@ sidebar-box {
 }
 
 .toplist-wrapper {
-    background: #ffffff;
+    
     /* Větší bílý okraj zlepší kontrast a čitelnost */
     padding: 12px; 
     border-radius: 8px;
@@ -190,6 +190,8 @@ sidebar-box {
     
     display: block !important;
     line-height: 0 !important;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .toplist-wrapper img {
