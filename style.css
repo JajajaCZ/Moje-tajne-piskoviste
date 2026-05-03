@@ -158,28 +158,52 @@ sidebar-box {
     box-sizing: border-box;
 }
 
+.sidebar-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    
+    /* Šířka přesně podle profilovky z image_e28225.png */
+    width: 208px;
+    margin: 0 auto 15px auto;
+    
+    /* Vzor tlapek - vrátíme kousek větší rozestup, ať to neruší oči */
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='8' y='25' font-size='16'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
+    background-repeat: round; 
+    background-size: 35px 35px; 
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* Box uděláme trochu vyšší, aby statistiky měly "vzduch" a lépe se četly */
+    padding: 25px 10px !important; 
+    box-sizing: border-box;
+}
+
 .toplist-wrapper {
     background: #ffffff;
-    padding: 6px;
-    border-radius: 6px;
+    /* Větší bílý okraj zlepší kontrast a čitelnost */
+    padding: 12px; 
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     
-    /* Totální vycentrování vnitřku */
     display: block !important;
     line-height: 0 !important;
-    font-size: 0 !important;
-    z-index: 1;
 }
 
 .toplist-wrapper img {
-    /* Ostré a velké statistiky */
+    /* PŘESNÉ ROZMĚRY BEZ ZVĚTŠOVÁNÍ (pro 100% ostrost) */
     width: 88px !important;
     height: 120px !important;
     display: block !important;
-    margin: 0 !important;
     
-    transform: scale(1.05); /* Mírné zvětšení */
-    image-rendering: pixelated; /* Proti rozmazání */
+    /* Odstraníme transform, který způsoboval to rozmazání */
+    transform: none !important; 
+    
+    /* Vynutíme nejostřejší možný rendering pro malé texty */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 .toplist-wrapper:hover {
     transform: scale(1.05); /* Jemný efekt při najetí myší */
