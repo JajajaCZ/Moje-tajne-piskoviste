@@ -3,7 +3,7 @@ content:
     label: Články
     type: collection
     path: clanky
-    format: json
+    format: markdown
     filename: "{{number padding=5}}-{{slug title}}"
     fields:
       - name: title
