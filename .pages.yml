@@ -40,18 +40,17 @@ content:
 
       - name: body
         label: Obsah článku
-        type: markdown
-        #options:
-          #image: true
-          #heading: true
-          #bold: true
-          #italic: true
-          #bulletList: true
-          #orderedList: true
-          #link: true
-          #blockquote: true
-          #code: true
-          #simple: false
+        type: rich-text
+        options:
+          image: true
+          heading: true
+          bold: true
+          italic: true
+          bulletList: true
+          orderedList: true
+          link: true
+          blockquote: true
+          code: true
 
       - name: url
         label: URL
