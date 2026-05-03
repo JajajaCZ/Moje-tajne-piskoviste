@@ -83,30 +83,6 @@ body {
     margin-bottom: 15px;
 }
 
-* Box statistik sjednocený s designem */
-.panda-stats-box {
-    background-color: var(--bg-card) !important; /* Tmavé pozadí podle webu */
-    border: 1px solid var(--border) !important;   /* Tenký rámeček */
-    border-radius: 12px !important;
-    padding: 20px !important;
-    margin-top: 20px !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-}
-
-/* Tabulka, která drží bambusy po stranách */
-.panda-grid {
-    border-collapse: collapse !important;
-    width: auto !important;
-}
-
-.panda-grid td {
-    padding: 10px !important; /* Prostor pro emoji */
-    font-size: 1.5rem !important;
-    vertical-align: middle !important;
-    text-align: center !important;
-}
 
 /* Samotný TOPlist - Zvětšený a Ostrý */
 .toplist-container img {
@@ -122,10 +98,7 @@ body {
     image-rendering: crisp-edges !important;
 }
 
-/* Aby zvětšený TOPlist nepřekryl emoji[cite: 1] */
-.toplist-cell {
-    padding: 30px !important;
-}
+
 /* Main Content Card */
 .card {
     flex: 1;
