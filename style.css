@@ -84,23 +84,25 @@ body {
 }
 
 .emoji-pattern {
-    /* Tmavé pozadí jako základ */
-    background-color: var(--bg-card); 
-    
-    /* Vytvoření vzoru z emoji tlapky 🐾 */
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='20'%3E🐾%3C/text%3E%3C/svg%3E");
-    
-    /* Repeat zajistí nekonečné opakování[cite: 1] */
-    background-repeat: repeat;
-    background-size: 40px 40px;
-    
+    /* Základní pozadí a barvy */
+    background-color: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 30px; /* Větší padding, aby vzor vynikl kolem TOPlistu */
+    
+    /* Vzor tlapek - nyní bezpečně zakódován */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='20' y='40' font-size='25'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 60px 60px;
+    
+    /* VYCENTROVÁNÍ OBSAHU (TOPlistu) */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Vnitřní stín pro hloubku */
+    justify-content: center; /* Horizontální vycentrování[cite: 1] */
+    align-items: center;     /* Vertikální vycentrování[cite: 1] */
+    
+    min-height: 250px;       /* Minimální výška, aby vzor vynikl */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 /* Karta pro statistiky */
 .stats-card {
@@ -126,33 +128,27 @@ body {
     margin-bottom: 12px;
 }
 
-/* Bílé pozadí pro samotnou tabulku statistik */
 .toplist-wrapper {
     background: #ffffff;
     padding: 10px;
     border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     line-height: 0;
-    transition: transform 0.3s ease;
+    z-index: 1; /* Aby byl TOPlist nad vzorem tlapek[cite: 5] */
 }
 
 .toplist-wrapper:hover {
     transform: scale(1.05); /* Jemný efekt při najetí myší */
 }
 
-/* Zvětšení a ostrost obrázku[cite: 1] */
 .toplist-wrapper img {
+    /* Ostré a zvětšené zobrazení[cite: 1] */
     width: 88px !important;
     height: 120px !important;
     display: block;
-    
-    /* Větší měřítko pro lepší čitelnost[cite: 1] */
-    transform: scale(1.2); 
-    margin: 10px 10px; /* Rezerva pro scale, aby obrázek "nepřetekl" */
-    
-    /* Pixelová ostrost bez rozmazání[cite: 1] */
-    image-rendering: pixelated; 
+    transform: scale(1.3); 
+    image-rendering: pixelated; /* Proti rozmazání[cite: 1] */
 }
-
 /* Main Content Card */
 .card {
     flex: 1;
