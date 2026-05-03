@@ -124,7 +124,7 @@ body {
     align-items: center !important;
     
     /* Padding určuje šířku ohrady */
-    padding: 30px !important; 
+    padding: 15px 45px !important; 
     width: fit-content; 
     margin: 15px auto;
     box-sizing: border-box;
@@ -145,8 +145,8 @@ body {
 
 .toplist-wrapper img {
     /* Zvětšení a ostrost[cite: 1] */
-    width: 88px !important;
-    height: 120px !important;
+    width: 114px !important;
+    height: 156px !important;
     
     /* TADY JE TA OPRAVA:[cite: 1, 5] */
     display: block !important; /* Zruší chování písmene */
