@@ -91,7 +91,8 @@ body {
     margin: 0 auto;
     align-items: flex-start;
 }
-.sidebar, .toplist-container{
+/* Sidebar jako hlavní kontejner */
+.sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,14 +106,31 @@ body {
     margin: 0 auto 15px auto;
 }
 
-.sidebar img, .toplist-container img {
-    width: 100% !important;
+/* Kontejner pro TOPlist uvnitř sidebaru */
+.toplist-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;       /* Roztáhne se na celou šířku vnitřku sidebaru */
+    margin-top: 15px;  /* Mezera pod tvou fotkou */
+    padding: 0;        /* Zrušíme vnitřní padding, aby mohl jít až ke krajům */
+    background: none;  /* Zrušíme dvojité pozadí */
+    border: none;      /* Zrušíme dvojitý rámeček */
+}
+
+/* Profilová fotka v sidebaru */
+.sidebar img {
+    width: 100%;
     max-width: 230px;
     border-radius: 8px;
 }
 
+/* Samotný obrázek/objekt TOPlistu */
 .toplist-container img {
+    width: 100% !important; /* Teď se roztáhne na šířku sidebaru */
+    max-width: 230px;
+    height: auto;
     object-fit: contain;
+    border-radius: 8px;
 }
 
 .card {
@@ -126,21 +144,6 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.lulu-quote {
-    color: blueviolet;
-    border-left: 5px solid blueviolet;
-    padding-left: 15px;
-    display: inline-block;
-    margin: 20px 0;
-    font-style: italic;
-}
-
-.lulu-quote cite {
-    display: block;
-    margin-top: 10px;
-    text-align: right;
-    color: var(--text-muted);
-}
 
 
 /* Mřížka pro karty vedle sebe */
