@@ -4,24 +4,23 @@ title: "Moje Články"
 permalink: /clanky/
 ---
 
-## Seznam všech článků
-
 <div class="post-grid">
-  {% for post in site.posts %}
+  {% for clanek in site.clanky %}  <!-- Tady je ta změna! -->
     <div class="post-card">
       <div class="post-thumbnail">
-        {% if post.thumbnail %}
-          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+        {% if clanek.thumbnail %}
+          <img src="{{ clanek.thumbnail | relative_url }}" alt="{{ clanek.title }}">
         {% else %}
           <img src="{{ '/img/default-thumb.png' | relative_url }}" alt="default">
         {% endif %}
       </div>
       
       <div class="post-content">
-        <span class="post-date">{{ post.date | date: "%d.%m.%Y" }}</span>
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.content | strip_html | truncatewords: 20 }}</p>
-        <a href="{{ post.url | relative_url }}" class="read-more">Číst dál →</a>
+        <!-- Pozor: u kolekcí se datum musí v hlavičce souboru psát explicitně -->
+        <span class="post-date">{{ clanek.date | date: "%d.%m.%Y" }}</span>
+        <h2><a href="{{ clanek.url | relative_url }}">{{ clanek.title }}</a></h2>
+        <p>{{ clanek.content | strip_html | truncatewords: 20 }}</p>
+        <a href="{{ clanek.url | relative_url }}" class="read-more">Číst dál →</a>
       </div>
     </div>
   {% endfor %}
