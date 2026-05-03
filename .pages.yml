@@ -11,8 +11,8 @@ content:
       - name: date
         label: Datum
         type: date
-      - name: tag
-        label: Tag
+      - name: tags
+        label: Tagy
         type: select
         options:
           - Novinka
