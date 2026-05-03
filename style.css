@@ -83,49 +83,60 @@ body {
     margin-bottom: 15px;
 }
 
-.red-panda-border-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #1a1414;
-    border: 3px solid #d35400;
-    border-radius: 15px;
+.panda-stats-box {
+    background-color: var(--bg-card); /* Sjednocení s designem */
+    border: 1px solid var(--border);   /* Sjednocení s designem */
+    border-radius: 12px;
     padding: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
-}
-
-.panda-row {
-    font-size: 1.2rem;
-    margin: 5px 0;
-}
-
-.panda-middle-row {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 100%;
 }
 
-.panda-side { font-size: 1.2rem; }
+/* Tabulka pro přesné rozmístění emoji */
+.panda-grid {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.panda-grid td {
+    padding: 5px;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* Prostřední buňka s TOPlistem */
+.toplist-cell {
+    padding: 10px !important;
+}
 
 .toplist-container {
-    background: #fff;
+    background: #fff; /* Bílé pozadí jen pro čitelnost tabulky */
     padding: 5px;
-    border-radius: 6px;
+    border-radius: 4px;
     line-height: 0;
+    display: inline-block;
 }
 
 .toplist-container img {
-    width: 88px !important; /* Fixní šířka pro ostrost */
-    height: 120px !important;
+    width: 88px !important;  /* Původní fyzická šířka */
+    height: 120px !important; /* Původní fyzická výška */
     display: block;
-    margin-bottom: 0;
-    image-rendering: pixelated;
-    border-radius: 0;
+    
+    /* Zvětšení bez rozmazání */
+    transform: scale(1.2);    /* Zvětší tabulku o 20 % */
+    transform-origin: center; /* Zvětšuje se rovnoměrně ze středu */
+    
+    /* Klíčové pro ostrost */
+    image-rendering: pixelated;   /* Pro Chrome/Edge/Safari */
+    image-rendering: crisp-edges; /* Pro Firefox */
 }
 
+/* Aby se zvětšený obrázek netloukl s emoji, přidáme buňce trochu místa */
+.toplist-cell {
+    padding: 25px !important; /* Větší padding udělá místo pro zvětšený scale */
+}
 /* Main Content Card */
 .card {
     flex: 1;
