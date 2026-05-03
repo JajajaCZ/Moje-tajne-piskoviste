@@ -17,6 +17,8 @@ content:
       - name: releaseDate
         label: Datum a čas vydání
         type: datetime
+        options:
+          format: "dd.MM.yyyy HH:mm"
 
       - name: tags
         label: Tagy
