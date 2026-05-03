@@ -90,9 +90,9 @@ body {
     border-radius: 12px;
     
     /* Vzor tlapek - nyní bezpečně zakódován */
-    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='20' y='40' font-size='25'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='20' y='40' font-size='25'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 15px 15px;
+    background-size: 60px 60px;
     
     /* VYCENTROVÁNÍ OBSAHU (TOPlistu) */
     display: flex;
@@ -100,7 +100,7 @@ body {
     align-items: center;     /* Vertikální vycentrování[cite: 1] */
     
     max-height: 200px;       /* Minimální výška, aby vzor vynikl */
-    padding: 5px;
+    padding: 1px;
     width: 100%;
     box-sizing: border-box;
 }
