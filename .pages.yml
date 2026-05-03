@@ -41,17 +41,17 @@ content:
       - name: body
         label: Obsah článku
         type: markdown
-        options:
-          image: true
-          heading: true
-          bold: true
-          italic: true
-          bulletList: true
-          orderedList: true
-          link: true
-          blockquote: true
-          code: true
-          simple: false
+        #options:
+          #image: true
+          #heading: true
+          #bold: true
+          #italic: true
+          #bulletList: true
+          #orderedList: true
+          #link: true
+          #blockquote: true
+          #code: true
+          #simple: false
 
       - name: url
         label: URL
