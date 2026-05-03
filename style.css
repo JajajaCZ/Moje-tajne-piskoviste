@@ -139,62 +139,65 @@ body {
 }
 
 
+/* Kontejner pro karty */
 .post-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* Vytvoří sloupce o minimální šířce 300px, které se naskládají vedle sebe */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
+/* Samotná karta */
 .post-card {
     display: flex;
-    background: #1a1a1a; /* Temnější pozadí pro kartu */
+    flex-direction: column; /* Obrázek bude nahoře, text pod ním */
+    background: #1a1a1a;
     border: 1px solid #333;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s;
+    height: 100%; /* Aby byly všechny karty stejně vysoké */
 }
 
 .post-card:hover {
-    transform: scale(1.01);
+    transform: translateY(-5px); /* Karta se při najetí mírně vznese */
     border-color: #4db8ff;
 }
 
+/* Prostor pro obrázek */
 .post-thumbnail {
-    width: 200px;
-    min-width: 200px;
-    height: 150px;
+    width: 100%;
+    height: 180px; /* Pevná výška náhledu */
+    overflow: hidden;
 }
 
 .post-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Obrázek se hezky vyplní a neořízne se divně */
+    object-fit: cover; /* Ořízne obrázek, aby vyplnil obdélník */
 }
 
+/* Obsah karty */
 .post-content {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .post-content h2 {
-    margin: 5px 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
-.post-content h2 a {
-    color: #4db8ff;
-    text-decoration: none;
-}
-
-.post-date {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    color: #ccc;
+/* Omezení náhledu textu na 3 řádky, aby karty zůstaly úhledné */
+.post-content p {
     font-size: 0.9rem;
-    text-decoration: underline;
+    color: #ccc;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
