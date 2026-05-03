@@ -109,14 +109,28 @@ body {
 .toplist-container {
     background: transparent !important;
     box-shadow: none !important;
-    transform: none !important; 
     display: inline-block;
     line-height: 0;
+    
+    /* Přesné rozměry podle image_e08253.png */
+    width: 102px; 
+    height: 88px; 
+    
+    /* Vystředění v rámci tlapkového pole */
+    margin-top: 10px; 
+    overflow: hidden;
+}
 
-    /* JEMNÉ POSUNUTÍ DOLŮ: 
-       Upravuj tohle číslo (třeba 5px, 8px, 10px), 
-       dokud to nebude lahodit tvému oku. */
-    margin-top: 8px; 
+/* Zacílíme přímo na obrázek počítadla pro maximální ostrost */
+.toplist-container img.counterimg {
+    width: 102px !important;
+    height: 88px !important;
+    display: block;
+    margin: 0 !important;
+    
+    /* Vypnutí vyhlazování, aby čísla byla čitelná */
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 /* --- OPRAVA PRO MOBILY --- */
