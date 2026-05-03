@@ -1,5 +1,7 @@
 ---
-# Prázdný Front Matter taky funguje, aktivuje Jekyll, ale nic nehledá
+{% assign vsechny_clanky = site.clanky | default: "" %}
+{% assign vsechny_projekty = site.projekty | default: "" %}
+{% assign vsechno = vsechny_clanky | concat: vsechny_projekty %}
 ---
 
 <!DOCTYPE html>

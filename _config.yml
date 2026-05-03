@@ -6,3 +6,7 @@ collections:
   clanky:
     output: true
     permalink: /clanky/:title/ # Doporučuji přidat /clanky/ i sem
+
+  projekty:
+    output: true
+    permalink: /projekty/:title/
