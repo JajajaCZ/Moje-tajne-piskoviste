@@ -5,15 +5,17 @@ content:
     path: clanky
     format: markdown
     filename: "{{number padding=5}}-{{slug title}}"
+
     media:
-        input: img
-        output: img
+      input: img
+      output: /img
+      rename: safe
+      categories: [image]
+
     fields:
       - name: title
         label: Nadpis
         type: string
-
-      
 
       - name: date
         label: Datum
@@ -57,22 +59,8 @@ content:
           blockquote: true
           code: true
           media: true
-          path: img
-        
+
       - name: url
         label: URL
         type: string
         default: https://jajajacz.github.io/Moje-tajne-piskoviste/
-
-      - name: images
-        input: media/images
-        output: /media/images
-        commit:
-          templates:
-            create: "chore(media): add {filename}"
-            update: "chore(media): update {filename}"
-            delete: "chore(media): remove {filename}"
-            rename: "chore(media): rename {oldFilename} -> {newFilename}"
-
-
- 
