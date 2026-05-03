@@ -129,7 +129,7 @@ body {
     
     /* Větší měřítko pro lepší čitelnost[cite: 1] */
     transform: scale(1.2); 
-    margin: 10px 0; /* Rezerva pro scale, aby obrázek "nepřetekl" */
+    margin: 10px 10px; /* Rezerva pro scale, aby obrázek "nepřetekl" */
     
     /* Pixelová ostrost bez rozmazání[cite: 1] */
     image-rendering: pixelated; 
