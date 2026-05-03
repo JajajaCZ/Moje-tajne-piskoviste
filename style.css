@@ -143,81 +143,74 @@ body {
 }
 
 
-/* Kontejner pro karty */
+/* Mřížka pro karty vedle sebe */
 .post-grid {
     display: grid;
-    /* Vytvoří sloupce o minimální šířce 300px, které se naskládají vedle sebe */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
     margin-top: 20px;
 }
 
-/* Samotná karta */
+/* Samotná karta jako Pokémon karta */
 .post-card {
-    display: flex;
-    flex-direction: column; /* Obrázek bude nahoře, text pod ním */
-    background: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 8px;
+    display: block; /* Aby odkaz fungoval přes celou kartu */
+    text-decoration: none;
+    position: relative;
+    aspect-ratio: 2.5 / 3.5; /* Klasický poměr hrací karty */
+    background-size: cover;
+    background-position: center;
+    border: 8px solid #e5c100; /* Zlatý Pokémon rám */
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.2s;
-    height: 100%; /* Aby byly všechny karty stejně vysoké */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
 }
 
 .post-card:hover {
-    transform: translateY(-5px); /* Karta se při najetí mírně vznese */
-    border-color: #4db8ff;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(77, 184, 255, 0.5);
 }
 
-/* Prostor pro obrázek */
-.post-thumbnail {
-    width: 100%;
-    height: 180px; /* Pevná výška náhledu */
-    overflow: hidden;
-}
-
-.post-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ořízne obrázek, aby vyplnil obdélník */
-}
-
-/* Obsah karty */
-.post-content {
-    padding: 15px;
+/* Průhledná vrstva s gradientem pro čitelnost textu */
+.post-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradient vytvoří průhlednost nahoře a tmavší pozadí pod textem dole */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.3) 100%);
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 15px;
 }
 
-.post-content h2 a {
-    color: #4db8ff; /* Tvá modrá barva */
-    text-decoration: none; /* Zmizí podtržení */
-    transition: color 0.2s;
+/* Obsah uvnitř karty */
+.post-content {
+    color: white;
 }
 
-.post-content h2 a:visited {
-    color: #4db8ff; /* Aby to nezfialovělo po kliknutí */
+.post-content h2 {
+    margin: 5px 0;
+    font-size: 1.3rem;
+    color: #4db8ff; /* Tvá modrá z indexu */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-.post-content h2 a:hover {
-    color: #80d4ff; /* Světlejší modrá při najetí */
-    text-decoration: underline;
+.post-date {
+    font-size: 0.75rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.post-content p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #eee;
+    margin-bottom: 10px;
+    font-style: italic;
 }
 
 .read-more {
-    color: #4db8ff !important;
+    font-size: 0.8rem;
     font-weight: bold;
-    text-decoration: none;
-}
-
-/* Omezení náhledu textu na 3 řádky, aby karty zůstaly úhledné */
-.post-content p {
-    font-size: 0.9rem;
-    color: #ccc;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 15px;
+    color: #e5c100;
 }

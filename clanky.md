@@ -5,23 +5,17 @@ permalink: /clanky/
 ---
 
 <div class="post-grid">
-  {% for clanek in site.clanky %}  <!-- Tady je ta změna! -->
-    <div class="post-card">
-      <div class="post-thumbnail">
-        {% if clanek.thumbnail %}
-          <img src="{{ clanek.thumbnail | relative_url }}" alt="{{ clanek.title }}">
-        {% else %}
-          <img src="{{ '/img/default-thumb.png' | relative_url }}" alt="default">
-        {% endif %}
+  {% for clanek in site.clanky %}
+    <a href="{{ clanek.url | relative_url }}" class="post-card" style="background-image: url('{{ clanek.thumbnail | relative_url }}');">
+      <div class="post-overlay">
+        <div class="post-content">
+          <span class="post-date">{{ clanek.date | date: "%d.%m.%Y" }}</span>
+          <h2>{{ clanek.title }}</h2>
+          <p>{{ clanek.content | strip_html | truncate: 100 }}</p>
+          <span class="read-more">Zobrazit kartu →</span>
+        </div>
       </div>
-      
-      <div class="post-content">
-        <!-- Pozor: u kolekcí se datum musí v hlavičce souboru psát explicitně -->
-        <span class="post-date">{{ clanek.date | date: "%d.%m.%Y" }}</span>
-        <h2><a href="{{ clanek.url | relative_url }}">{{ clanek.title }}</a></h2>
-        <p>{{ clanek.content | strip_html | truncatewords: 20 }}</p>
-        <a href="{{ clanek.url | relative_url }}" class="read-more">Číst dál →</a>
-      </div>
-    </div>
+    </a>
   {% endfor %}
+</div>
 </div>
