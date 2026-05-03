@@ -112,23 +112,28 @@ body {
     display: inline-block;
     line-height: 0;
     
-    /* Přesné rozměry podle image_e08253.png */
-    width: 102px; 
-    height: 88px; 
+    /* Zpět na automatiku, aby skript věděl, kolik místa má */
+    width: auto; 
+    height: auto; 
     
-    /* Vystředění v rámci tlapkového pole */
-    margin-top: 10px; 
-    overflow: hidden;
+    /* Vizuální zvětšení o 20 % */
+    transform: scale(1.2);
+    transform-origin: center;
+    
+    /* Odstup od horních tlapek */
+    margin-top: 15px; 
 }
 
-/* Zacílíme přímo na obrázek počítadla pro maximální ostrost */
 .toplist-container img.counterimg {
+    /* Vynutíme zobrazení a ostrost */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    
+    /* Necháme ho v původním rozměru, zvětší ho ten transform nahoře */
     width: 102px !important;
     height: 88px !important;
-    display: block;
-    margin: 0 !important;
     
-    /* Vypnutí vyhlazování, aby čísla byla čitelná */
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
