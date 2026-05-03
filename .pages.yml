@@ -13,7 +13,7 @@ content:
         type: date
       - name: tag
         label: Tagy
-        type: multiselect
+        type: select
         options:
           - Novinka
           - Projekt
