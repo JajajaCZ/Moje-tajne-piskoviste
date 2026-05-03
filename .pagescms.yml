@@ -13,12 +13,16 @@ content:
         label: Datum
         type: date
 
-     - name: tags
+      - name: tags
         label: Tagy
         type: select
         options:
           multiple: true
-          values: ["Novinka", "Projekt", "Linux", "Ostatní"]
+          values:
+            - Novinka
+            - Projekt
+            - Linux
+            - Ostatní
 
       - name: desc
         label: Krátký popis
