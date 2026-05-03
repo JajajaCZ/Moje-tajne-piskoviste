@@ -51,6 +51,7 @@ content:
           link: true
           blockquote: true
           code: true
+          media: true
 
       - name: url
         label: URL
