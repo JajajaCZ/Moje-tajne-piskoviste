@@ -18,4 +18,3 @@ permalink: /clanky/
     </a>
   {% endfor %}
 </div>
-</div>
