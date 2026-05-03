@@ -194,8 +194,7 @@ sidebar-box {
 
 .toplist-wrapper img {
     /* PŘESNÉ ROZMĚRY BEZ ZVĚTŠOVÁNÍ (pro 100% ostrost) */
-    width: 88px !important;
-    height: 120px !important;
+   
     display: block !important;
     
     /* Odstraníme transform, který způsoboval to rozmazání */
