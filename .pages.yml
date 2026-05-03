@@ -1,8 +1,8 @@
 content:
   - name: prispevky
-    label: Články
+    label: Příspěvky
     type: collection
-    path: clanky
+    path: prispevky
     # Filename nastavený na title je nejstabilnější pro ukládání
     filename: "{{title}}"
     format: markdown
