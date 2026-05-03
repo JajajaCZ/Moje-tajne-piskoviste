@@ -28,6 +28,10 @@ content:
         label: Krátký popis
         type: text
 
+      - name: body
+        label: Obsah článku
+        type: rich-text
+
       - name: url
         label: URL
         type: string
