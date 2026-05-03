@@ -56,3 +56,4 @@ content:
       - name: url
         label: URL
         type: string
+        default: https://jajajacz.github.io/Moje-tajne-piskoviste/
