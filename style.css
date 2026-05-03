@@ -99,8 +99,8 @@ body {
     justify-content: center; /* Horizontální vycentrování[cite: 1] */
     align-items: center;     /* Vertikální vycentrování[cite: 1] */
     
-    min-height: 250px;       /* Minimální výška, aby vzor vynikl */
-    padding: 20px;
+    max-height: 200px;       /* Minimální výška, aby vzor vynikl */
+    padding: 5px;
     width: 100%;
     box-sizing: border-box;
 }
