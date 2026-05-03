@@ -51,7 +51,7 @@ e(s.colorDepth)+'" width="88" height="120" border="0" alt="TOPlist" />';
             <section class="news-section">
                 <h2>Poslední novinky</h2>
                 <div class="post-grid">
-                    {% assign serazeno = vsechno | sort: "date" | reverse %}
+                   
                     {% for polozka in serazeno limit:6 %}
                         <a href="{{ polozka.url | relative_url }}" class="post-card" style="background-image: url('{{ polozka.thumbnail | relative_url }}');">
                             <div class="post-overlay">
