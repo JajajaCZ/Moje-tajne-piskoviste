@@ -1,7 +1,14 @@
 ---
-{% assign vsechny_clanky = site.clanky | default: "" %}
-{% assign vsechny_projekty = site.projekty | default: "" %}
-{% assign vsechno = vsechny_clanky | concat: vsechny_projekty %}
+{% assign clanky = site.clanky | default: Array.new %}
+{% assign projekty = site.projekty | default: Array.new %}
+{% assign vsechno = clanky | concat: projekty %}
+
+{% comment %} Tady přidáme kontrolu, aby sort neházel chybu {% endcomment %}
+{% if vsechno.size > 0 %}
+    {% assign serazeno = vsechno | sort: "date" | reverse %}
+{% else %}
+    {% assign serazeno = "" | split: "" %}
+{% endif %}
 ---
 <!DOCTYPE html>
 <html lang="cs">
