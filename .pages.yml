@@ -4,7 +4,7 @@ content:
     type: collection
     path: clanky
     format: markdown
-    filename: "{{number padding=5}}-{{slug title}}"
+    filename: "{{number padding=5}}-{{title}}"
 
     media:
       input: img
