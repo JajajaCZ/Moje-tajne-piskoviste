@@ -1,9 +1,8 @@
 theme: minima
 baseurl: "/Moje-tajne-piskoviste"
 timezone: Europe/Prague
+future: false # <--- Tady změň false na true
 collections:
   clanky:
     output: true
-    permalink: /:title/
-
-future: false
+    permalink: /clanky/:title/ # Doporučuji přidat /clanky/ i sem
