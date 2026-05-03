@@ -106,6 +106,30 @@ body {
     margin: 0 auto 15px auto;
 }
 
+.red-panda-border-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1a1414; /* Velmi tmavé, elegantní pozadí */
+    border: 3px solid #d35400; /* Oranžová linka */
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.panda-row {
+    font-size: 1.4rem;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.panda-side {
+    font-size: 1.4rem;
+    padding: 0 10px;
+}
+
 .toplist-container {
     padding: 0 !important; /* Odstraní vnitřní okraj, který brání roztažení */
     background: none !important; /* Odstraní to šedé pozadí pod toplistem */
