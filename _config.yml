@@ -1,0 +1,9 @@
+theme: minima
+baseurl: "/Moje-tajne-piskoviste"
+timezone: Europe/Prague
+collections:
+  clanky:
+    output: true
+    permalink: /:title/
+
+future: false
