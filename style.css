@@ -83,7 +83,25 @@ body {
     margin-bottom: 15px;
 }
 
-
+.emoji-pattern {
+    /* Tmavé pozadí jako základ */
+    background-color: var(--bg-card); 
+    
+    /* Vytvoření vzoru z emoji tlapky 🐾 */
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='20'%3E🐾%3C/text%3E%3C/svg%3E");
+    
+    /* Repeat zajistí nekonečné opakování[cite: 1] */
+    background-repeat: repeat;
+    background-size: 40px 40px;
+    
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px; /* Větší padding, aby vzor vynikl kolem TOPlistu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Vnitřní stín pro hloubku */
+}
 /* Karta pro statistiky */
 .stats-card {
     background-color: var(--bg-card); /* Tmavší modrá z tvého webu */
