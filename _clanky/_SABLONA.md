@@ -1,8 +1,9 @@
 ---
-title: "ZDE NAPIŠ NÁZEV"
-date: 2024-05-20
-tags: [Novinka]
-desc: "Krátký popis článku"
+layout: default
+title: "Jak jsem se zlobil s CMS"
+categories: [projekty]
+date: 2026-05-03 15:30:00 +0200
+thumbnail: "/img/nahledy/clanek1.jpg"
 ---
 
 #Tady začni psát svůj text. Můžeš používat:
