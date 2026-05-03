@@ -2,9 +2,10 @@ content:
   - name: clanky
     label: Články
     type: collection
+    filename: "clanek-{{title}}"
     path: clanky
     format: markdown
-    filename: "{{title}}"
+    
 
     media:
       input: img
