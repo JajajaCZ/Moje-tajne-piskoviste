@@ -135,10 +135,20 @@ body {
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     
-    /* KLÍČOVÉ PRO VYCENTROVÁNÍ OBRÁZKU: */
-    line-height: 0;      /* Odstraní prostor pod obrázkem */
-    display: flex;       /* Vynutí flex i uvnitř obalu[cite: 5] */
-    align-items: center; /* Zarovná obrázek vertikálně[cite: 5] */
+    /* Vynucené vycentrování */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* Odstranění neviditelného místa pod obrázkem */
+    line-height: 0 !important;
+    font-size: 0 !important; 
+    
+    /* KOMPENZACE: Pokud je stále moc nahoře, 
+       jemně ho posuneme dolů tímto: */
+    padding-top: 10px; 
+    padding-bottom: 6px;
+    
     z-index: 1;
 }
 
@@ -147,13 +157,14 @@ body {
 }
 
 .toplist-wrapper img {
-    /* Ostré a zvětšené zobrazení[cite: 1] */
+    /* Ostré a velké statistiky[cite: 1] */
     width: 88px !important;
     height: 120px !important;
-    display: block;
-    transform: scale(1.3); 
+    display: block !important;
+    margin: 0 auto !important;
+    
+    transform: scale(1.4); 
     image-rendering: pixelated; /* Proti rozmazání[cite: 1] */
-    margin: 0 !important;
 }
 /* Main Content Card */
 .card {
