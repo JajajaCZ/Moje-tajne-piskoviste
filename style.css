@@ -91,7 +91,7 @@ body {
     margin: 0 auto;
     align-items: flex-start;
 }
-/* Sidebar jako hlavní kontejner */
+/* Sidebar zůstává jako hlavní karta */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -99,38 +99,28 @@ body {
     text-align: center;
     min-width: 128px;
     flex: 0 0 20%;
-    background-color: var(--bg-card);
+    background-color: var(--bg-card); /* Pozadí karty */
     padding: 20px;
     border-radius: 12px;
     border: 1px solid var(--border);
     margin: 0 auto 15px auto;
 }
 
-/* Kontejner pro TOPlist uvnitř sidebaru */
+/* Kontejner toplistu už NENÍ karta, je to jen prostor pro obrázek */
 .toplist-container {
+    width: 100%;             /* Roztáhne se na plnou šířku vnitřku sidebaru */
+    margin-top: 15px;        /* Mezera od obrázku nad ním */
     display: flex;
     justify-content: center;
-    width: 100%;       /* Roztáhne se na celou šířku vnitřku sidebaru */
-    margin-top: 15px;  /* Mezera pod tvou fotkou */
-    padding: 0;        /* Zrušíme vnitřní padding, aby mohl jít až ke krajům */
-    background: none;  /* Zrušíme dvojité pozadí */
-    border: none;      /* Zrušíme dvojitý rámeček */
 }
 
-/* Profilová fotka v sidebaru */
-.sidebar img {
-    width: 100%;
-    max-width: 230px;
-    border-radius: 8px;
-}
-
-/* Samotný obrázek/objekt TOPlistu */
+/* Sjednocení vzhledu obrázků */
+.sidebar img, 
 .toplist-container img {
-    width: 100% !important; /* Teď se roztáhne na šířku sidebaru */
-    max-width: 230px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
+    width: 100% !important;  /* Oba se roztáhnou stejně */
+    max-width: 230px;        /* Maximální šířka, aby to nebylo obří */
+    border-radius: 8px;      /* Stejné zaoblení */
+    object-fit: contain;     /* Zachová poměr stran */
 }
 
 .card {
