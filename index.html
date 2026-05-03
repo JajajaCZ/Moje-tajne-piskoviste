@@ -3,96 +3,78 @@
 {% assign vsechny_projekty = site.projekty | default: "" %}
 {% assign vsechno = vsechny_clanky | concat: vsechny_projekty %}
 ---
-
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <title>Moje tajné pískoviště</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    
     <nav class="navbar">
         <a href="{{ '/' | relative_url }}">Domů</a>
         <a href="{{ '/clanky/' | relative_url }}">Články</a>
         <a href="https://github.com/JajajaCZ?tab=repositories" target="_blank">Projekty</a>
-        
     </nav>
+
     <div class="maincontainer">
-       
         <nav class="sidebar">
-           <a href="https://github.com/JajajaCZ" target="blank">
-            <img src="img/jajajacz.jfif">
-           </a>
+            <a href="https://github.com/JajajaCZ" target="_blank">
+                <img src="img/jajajacz.jfif" alt="Profil">
+            </a>
            
-                <div class="red-panda-border-container">
-                <!-- Horní řada: Jen bambus a stopy -->
+            <div class="red-panda-border-container">
                 <div class="panda-row">🎋 🐾 🎋 🐾 🎋</div>
-                
                 <div class="panda-middle-row">
                     <span class="panda-side">🎋</span>
-                
                     <div class="toplist-container">
                         <a href="https://www.toplist.cz/stat/1841742/" id="toplistcz1841742" title="TOPlist">
                             <noscript>
-                                <img src="https://toplist.cz/count.asp?id=1841742&logo=bc&njs=1">
+                                <img src="https://toplist.cz/count.asp?id=1841742&logo=bc&njs=1" alt="TOPlist">
                             </noscript>
                             <script language="JavaScript">
-                            (function(d,e,s) 
-                            {
-                                d.getElementById('toplistcz1841742').innerHTML='<img src="https://toplist.cz/count.asp?id=1841742&logo=bc&http='+e(d.referrer)+'&t='+e(d.title)+'&l='+e(d.URL)+'&wi='+e(s.width)+'&he='+e(s.height)+'&cd='+e(s.colorDepth)+'" style="width:100%; max-width:230px; border:0;" alt="TOPlist" />';
-                            }
-                            (document,encodeURIComponent,window.screen))
+                            (function(d,e,s) {
+                                d.getElementById('toplistcz1841742').innerHTML='<img src="https://toplist.cz/count.asp?id=1841742&logo=bc&http='+e(d.referrer)+'&t='+e(d.title)+'&l='+e(d.URL)+'&wi='+e(s.width)+'&he='+e(s.height)+'&cd='+e(s.colorDepth)+'" alt="TOPlist" />';
+                            }(document,encodeURIComponent,window.screen))
                             </script>
                         </a>
                     </div>
                     <span class="panda-side">🎋</span>
                 </div>
-                <!-- Spodní řada -->
-            <div class="panda-row">🎋 🐾 🎋 🐾 🎋</div>
-        </nav>
+                <div class="panda-row">🎋 🐾 🎋 🐾 🎋</div>
+            </div> <!-- KONEC red-panda-border-container -->
+        </nav> <!-- KONEC sidebar -->
         
-        <main class="card" >
-            
+        <main class="card">
             <div class="mainheader">
-                <a href="https://jajajacz.github.io/Moje-tajne-piskoviste/">
-                    <img src="img/hacker.png" alt="hecker padnda" class="banner">             
+                <a href="{{ '/' | relative_url }}">
+                    <img src="img/hacker.png" alt="hacker panda" class="banner">             
                 </a>
             </div> 
             
-            <hr style="border: 0; border-top: 1px solid #333;">
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
             
             <section class="news-section">
                 <h2>Poslední novinky</h2>
                 <div class="post-grid">
-                {% comment %} Spojíme články a projekty do jedné proměnné {% endcomment %}
-                {% assign vsechno = site.clanky | concat: site.projekty %}
-                
-                {% comment %} Seřadíme od nejnovějšího (reverse) {% endcomment %}
-                {% assign serazeno = vsechno | sort: "date" | reverse %}
-                
-                {% for polozka in serazeno limit:6 %}
-                    <a href="{{ polozka.url | relative_url }}" class="post-card" style="background-image: url('{{ polozka.thumbnail | relative_url }}');">
-                    <div class="post-overlay">
-                        <div class="post-content">
-                        <span class="post-date">
-                            {{ polozka.date | date: "%d.%m.%Y" }} 
-                            {% if polozka.collection == "projekty" %} | 🛠️ Projekt {% endif %}
-                        </span>
-                        <h2>{{ polozka.title }}</h2>
-                        <p>{{ polozka.content | strip_html | truncate: 80 }}</p>
-                        </div>
-                    </div>
-                    </a>
-                {% endfor %}
+                    {% assign serazeno = vsechno | sort: "date" | reverse %}
+                    {% for polozka in serazeno limit:6 %}
+                        <a href="{{ polozka.url | relative_url }}" class="post-card" style="background-image: url('{{ polozka.thumbnail | relative_url }}');">
+                            <div class="post-overlay">
+                                <div class="post-content">
+                                    <span class="post-date">
+                                        {{ polozka.date | date: "%d.%m.%Y" }} 
+                                        {% if polozka.collection == "projekty" %} | 🛠️ Projekt {% endif %}
+                                    </span>
+                                    <h2>{{ polozka.title }}</h2>
+                                    <p>{{ polozka.content | strip_html | truncate: 60 }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
             </section>
-    
         </main>
     </div>    
 </body>
-
 </html>
