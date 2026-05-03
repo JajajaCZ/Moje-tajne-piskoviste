@@ -21,8 +21,8 @@ content:
       - name: releaseTime
         label: Čas vydání
         type: string
-        placeholder: "15:30"
-        help: "Hodiny:Minuty (např. 09:00 nebo 23:30)"
+        placeholder: 15:30
+        help: Hodiny:Minuty (např. 09:00 nebo 23:30)
 
       - name: tags
         label: Tagy
