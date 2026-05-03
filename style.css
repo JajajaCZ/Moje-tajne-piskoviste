@@ -175,7 +175,7 @@ body {
 .post-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ořízne obrázek, aby vyplnil obdélník */
+    object-fit: contain; /* Ořízne obrázek, aby vyplnil obdélník */
 }
 
 /* Obsah karty */
@@ -186,9 +186,25 @@ body {
     flex-grow: 1;
 }
 
-.post-content h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+.post-content h2 a {
+    color: #4db8ff; /* Tvá modrá barva */
+    text-decoration: none; /* Zmizí podtržení */
+    transition: color 0.2s;
+}
+
+.post-content h2 a:visited {
+    color: #4db8ff; /* Aby to nezfialovělo po kliknutí */
+}
+
+.post-content h2 a:hover {
+    color: #80d4ff; /* Světlejší modrá při najetí */
+    text-decoration: underline;
+}
+
+.read-more {
+    color: #4db8ff !important;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /* Omezení náhledu textu na 3 řádky, aby karty zůstaly úhledné */
