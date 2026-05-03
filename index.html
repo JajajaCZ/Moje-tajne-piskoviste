@@ -54,26 +54,31 @@
             
             <hr style="border: 0; border-top: 1px solid #333;">
             
-            <article>
-                <div>
-                    <h2>Můj první IT projekt</h2>
-                    
-                    <div>
-                        <h3>Co jsem se zatím naučil</h3>
-                        <ul>
-                            <li>Základy html</li>
-                            <li>Jednoduchý discord bot</li>
-                            <li>Vlastní Termux server</li>
-                        </ul>
+            <section class="news-section">
+                <h2>Poslední novinky</h2>
+                <div class="post-grid">
+                {% comment %} Spojíme články a projekty do jedné proměnné {% endcomment %}
+                {% assign vsechno = site.clanky | concat: site.projekty %}
+                
+                {% comment %} Seřadíme od nejnovějšího (reverse) {% endcomment %}
+                {% assign serazeno = vsechno | sort: "date" | reverse %}
+                
+                {% for polozka in serazeno limit:6 %}
+                    <a href="{{ polozka.url | relative_url }}" class="post-card" style="background-image: url('{{ polozka.thumbnail | relative_url }}');">
+                    <div class="post-overlay">
+                        <div class="post-content">
+                        <span class="post-date">
+                            {{ polozka.date | date: "%d.%m.%Y" }} 
+                            {% if polozka.collection == "projekty" %} | 🛠️ Projekt {% endif %}
+                        </span>
+                        <h2>{{ polozka.title }}</h2>
+                        <p>{{ polozka.content | strip_html | truncate: 80 }}</p>
+                        </div>
                     </div>
-                    <p>Mrkni na můj <a href="https://github.com/JajajaCZ" style="color: #4db8ff; text-decoration: none; font-weight:bold;" target="_blank">GitHub profil</a></p>
-                </div>        
-            </article>
-        
-            <blockquote class="lulu-quote">
-                "Hmmm, to chutnalo fialově."
-                <cite class="lulu-quote"><em>Lulu</em></cite>
-            </blockquote>
+                    </a>
+                {% endfor %}
+                </div>
+            </section>
     
         </main>
     </div>    
