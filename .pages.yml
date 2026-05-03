@@ -11,18 +11,14 @@ content:
       - name: date
         label: Datum
         type: date
-      - name: tag
-        label: Tagy
-        type: multiselect
+      - name: tags
+        label: Tag
+        type: select
         options:
-          - label: Novinka
-            value: Novinka
-          - label: Projekt
-            value: Projekt
-          - label: Linux
-            value: Linux
-          - label: Ostatní
-            value: Ostatní
+          - Novinka
+          - Projekt
+          - Linux
+          - Ostatní
       - name: desc
         label: Krátký popis
         type: text
