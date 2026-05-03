@@ -2,11 +2,10 @@ content:
   - name: clanky
     label: Články
     type: collection
-    filename: "clanek-{{title}}"
     path: clanky
+    filename: "{{year}}-{{month}}-{{day}}-{{title}}" # Formát: 2024-05-03-muj-clanek
     format: markdown
     
-
     media:
       input: img
       output: /img
