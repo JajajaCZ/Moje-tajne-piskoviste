@@ -3,7 +3,7 @@ content:
     label: Články
     type: collection
     path: clanky
-    filename: "{{year}}-{{month}}-{{day}}-{{title}}" # Formát: 2024-05-03-muj-clanek
+    filename: "clanek"
     format: markdown
     
     media:
