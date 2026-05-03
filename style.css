@@ -84,20 +84,56 @@ body {
 }
 
 
-/* Samotný TOPlist - Zvětšený a Ostrý */
-.toplist-container img {
-    width: 88px !important;
-    height: 120px !important;
-    display: block !important;
-    
-    /* Zvětšení o 30%[cite: 1] */
-    transform: scale(1.3) !important; 
-    
-    /* Vynucení ostrosti hran[cite: 1] */
-    image-rendering: pixelated !important;
-    image-rendering: crisp-edges !important;
+/* Karta pro statistiky */
+.stats-card {
+    background-color: var(--bg-card); /* Tmavší modrá z tvého webu */
+    border: 1px solid var(--border);   /* Jemný okraj[cite: 1] */
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Nadpis nad statistikami */
+.stats-label {
+    color: var(--accent); /* Tvoje světle modrá[cite: 1] */
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Bílé pozadí pro samotnou tabulku statistik */
+.toplist-wrapper {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    line-height: 0;
+    transition: transform 0.3s ease;
+}
+
+.toplist-wrapper:hover {
+    transform: scale(1.05); /* Jemný efekt při najetí myší */
+}
+
+/* Zvětšení a ostrost obrázku[cite: 1] */
+.toplist-wrapper img {
+    width: 88px !important;
+    height: 120px !important;
+    display: block;
+    
+    /* Větší měřítko pro lepší čitelnost[cite: 1] */
+    transform: scale(1.2); 
+    margin: 10px 0; /* Rezerva pro scale, aby obrázek "nepřetekl" */
+    
+    /* Pixelová ostrost bez rozmazání[cite: 1] */
+    image-rendering: pixelated; 
+}
 
 /* Main Content Card */
 .card {
