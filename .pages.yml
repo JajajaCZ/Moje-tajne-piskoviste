@@ -58,8 +58,21 @@ content:
           code: true
           media: true
           path: img
-
+        
       - name: url
         label: URL
         type: string
         default: https://jajajacz.github.io/Moje-tajne-piskoviste/
+
+      - name: images
+        input: media/images
+        output: /media/images
+        commit:
+          templates:
+            create: "chore(media): add {filename}"
+            update: "chore(media): update {filename}"
+            delete: "chore(media): remove {filename}"
+            rename: "chore(media): rename {oldFilename} -> {newFilename}"
+
+
+ 
