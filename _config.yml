@@ -4,7 +4,6 @@ baseurl: "/Moje-tajne-piskoviste"
 exclude: ["vrakoviste"]
 
 #úprava patičky
-description: ""
 github_username: ""
 
 minima:
