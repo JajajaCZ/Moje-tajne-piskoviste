@@ -1,7 +1,6 @@
 title: Moje tajné pískoviště
 theme: minima
 baseurl: "/Moje-tajne-piskoviste"
-exclude: ["vrakoviste"]
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
