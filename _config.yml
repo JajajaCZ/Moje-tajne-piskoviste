@@ -2,3 +2,7 @@ title: Moje tajné pískoviště
 theme: minima
 baseurl: "/Moje-tajne-piskoviste"
 exclude: ["vrakoviste"]
+
+#úprava patičky
+description: ""
+github_username: ""
