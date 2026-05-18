@@ -32,7 +32,9 @@
     <!-- Box se statistikami a tlapkami -->
             <div class="stats-card emoji-pattern">
                 <div class="toplist-container">
-                    <!-- Skripty nového počítadla -->
+                    <p>Počet článků: {{ site.clanky | size }}</p>
+                    <p>Počet projektů: {{ site.projekty | size }}</p>
+                    <p>Celkem nalezeno: {{ vsechno | size }}</p>
                  
                 </div>
             </div>     
