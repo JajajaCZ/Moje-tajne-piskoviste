@@ -1,13 +1,18 @@
 ---
-{% assign clanky = site.clanky %}
-{% assign projekty = site.projekty %}
-{% assign vsechno = clanky | concat: projekty %}
+{% assign clanky = site.clanky | compact %}
+{% assign projekty = site.projekty | compact %}
 
-{% if vsechno.size > 0 %}
-    {% assign serazeno = vsechno | sort: "date" | reverse %}
+{% if clanky.size > 0 and projekty.size > 0 %}
+    {% assign vsechno = clanky | concat: projekty %}
+{% elsif clanky.size > 0 %}
+    {% assign vsechno = clanky %}
+{% elsif projekty.size > 0 %}
+    {% assign vsechno = projekty %}
 {% else %}
-    {% assign serazeno = "" | split: "" %}
+    {% assign vsechno = "" | split: "" %}
 {% endif %}
+
+{% assign serazeno = vsechno | sort: "date" | reverse %}
 ---
 <!DOCTYPE html>
 <html lang="cs">
