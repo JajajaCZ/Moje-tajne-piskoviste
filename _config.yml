@@ -6,3 +6,11 @@ exclude: ["vrakoviste"]
 #úprava patičky
 description: ""
 github_username: ""
+
+minima:
+  social_links:
+    github: false
+  date_format: "%b %d, %Y"
+
+description: false
+author: false
