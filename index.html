@@ -1,6 +1,6 @@
 ---
-{% assign clanky = site.clanky | default: "" | split: "" %}
-{% assign projekty = site.projekty | default: "" | split: "" %}
+{% assign clanky = site.clanky %}
+{% assign projekty = site.projekty %}
 {% assign vsechno = clanky | concat: projekty %}
 
 {% if vsechno.size > 0 %}
@@ -57,7 +57,7 @@
                                 <div class="post-content">
                                     <span class="post-date">
                                         {{ polozka.date | date: "%d.%m.%Y" }} 
-                                        {% if polozka.collection == "projekty" %} | 🛠️ Projekt {% endif %}
+                                        {% if polozka.collection.label == "projekty" %} | 🛠️ Projekt {% endif %}
                                     </span>
                                     <h2>{{ polozka.title }}</h2>
                                     <p>{{ polozka.content | strip_html | truncate: 60 }}</p>
