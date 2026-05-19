@@ -15,9 +15,15 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 // Úprava horního menu/headeru, aby nesvítil bíle
 .site-header {
   background-color: #0A0A0A !important;
-  border-bottom: 1px solid #FFFFFF !important; /* Velmi jemná dělicí linka */
+  border-bottom: 1px solid #FFFFFF !important;
 }
 
 .site-title img {
-  padding: 15px 0; /* 15 pixelů mezera nahoře a dole, 0 pixelů po stranách */
+  padding: 10px 0;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.site-title:hover img {
+  transform: scale(1.05) !important;       /* Jemně zvětší pandu o 5 % */
+  filter: brightness(1.2) !important;       /* Rozsvítí/rozjasní obrázek o 20 % */
 }
