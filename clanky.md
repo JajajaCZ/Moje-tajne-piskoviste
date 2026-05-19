@@ -7,15 +7,21 @@ order: 1
 
 # Všechny články
 
-<ul class="post-list">
+<div class="piskoviste-grid">
   {% for clanek in site.clanky %}
-    <li>
-      <span class="post-meta">{{ clanek.date | date: "%b %d, %Y" }}</span>
-      <h3>
-        <a class="post-link" href="{{ clanek.url | relative_url }}">
+    <div class="piskoviste-karta karta-clanek">
+      <div class="karta-meta">
+        <span class="karta-datum">{{ clanek.date | date: "%d. %m. %Y" }}</span>
+        <span class="karta-tag">📝 Článek</span>
+      </div>
+      
+      <h3 class="karta-nadpis">
+        <a class="karta-link" href="{{ clanek.url | relative_url }}">
           {{ clanek.title }}
         </a>
       </h3>
-    </li>
+      
+      <p class="karta-anotace">{{ clanek.excerpt | strip_html | truncatewords: 12 }}</p>
+    </div>
   {% endfor %}
-</ul>
+</div>

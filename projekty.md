@@ -5,17 +5,23 @@ permalink: /projekty/
 order: 2
 ---
 
-# Moje rozpracované projekty
+# Moje projekty
 
-<ul class="post-list">
+<div class="piskoviste-grid">
   {% for projekt in site.projekty %}
-    <li>
-      <span class="post-meta">{{ projekt.date | date: "%b %d, %Y" }}</span>
-      <h3>
-        <a class="post-link" href="{{ projekt.url | relative_url }}">
+    <div class="piskoviste-karta karta-projekt">
+      <div class="karta-meta">
+        <span class="karta-datum">{{ projekt.date | date: "%d. %m. %Y" }}</span>
+        <span class="karta-tag">🛠️ Projekt</span>
+      </div>
+      
+      <h3 class="karta-nadpis">
+        <a class="karta-link" href="{{ projekt.url | relative_url }}">
           {{ projekt.title }}
         </a>
       </h3>
-    </li>
+      
+      <p class="karta-anotace">{{ projekt.excerpt | strip_html | truncatewords: 12 }}</p>
+    </div>
   {% endfor %}
-</ul>
+</div>
