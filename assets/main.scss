@@ -267,4 +267,23 @@ post-header {
       color: #ffffff !important; /* Bílé nápisy */
     }
   }
+
+  /* ZMENŠENÍ TEXTŮ PRO MOBILNÍ DISPLEJ */
+  .post-content h1:first-of-type {
+    font-size: 1.5rem !important; /* Zmenšení hlavního nadpisu z obřích 2.2rem */
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .post-listing-heading {
+    font-size: 1.15rem !important; /* Zmenšení nadpisu Nejnovější příspěvky */
+    margin-top: 25px !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* Volitelné: Mírné zmenšení nadpisů uvnitř samotných kartiček, ať to ladí */
+  .karta-nadpis {
+    font-size: 1.1rem !important;
+  }
 }
+
