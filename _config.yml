@@ -9,7 +9,7 @@ github_username: null
 collections:
   clanky:
     output: true
-    permalink: /clanky/:name/
+    permalink: /clanky/:title/
   projekty:      # Tímto zakládáme novou sekci
     output: true
-    permalink: /projekty/:name/
+    permalink: /projekty/:title/

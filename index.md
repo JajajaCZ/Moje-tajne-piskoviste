@@ -9,22 +9,25 @@ Vem si lopatičku a pojď s podívat, s čím si tu hraju
 
 {% assign vsechny_prispevky = site.clanky | concat: site.projekty | sort: "date" | reverse %}
 
-<h2 class="post-listing-heading">Nejnovější příspěvky (Články & Projekty)</h2>
+<h2 class="post-listing-heading">Nejnovější příspěvky</h2>
 
-<ul class="post-list">
-  {% for prispevek in vsechny_prispevky %}
-    <li>
-      <span class="post-meta">
-        {{ prispevek.date | date: "%b %d, %Y" }} 
-        • 
-        {% if prispevek.collection == "projekty" %} 🛠️ Projekt {% else %} 📝 Článek {% endif %}
-      </span>
+<div class="piskoviste-grid">
+  {% for prispevek in vsechny_prispevky limit: 6 %}
+    <div class="piskoviste-karta {% if prispevek.collection == 'projekty' %}karta-projekt{% else %}karta-clanek{% endif %}">
+      <div class="karta-meta">
+        {{ prispevek.date | date: "%d. %m. %Y" }}
+        <span class="karta-tag">
+          {% if prispevek.collection == "projekty" %}🛠️ Projekt{% else %}📝 Článek{% endif %}
+        </span>
+      </div>
+      
       <h3>
-        <a class="post-link" href="{{ prispevek.url | relative_url }}">
+        <a class="karta-link" href="{{ prispevek.url | relative_url }}">
           {{ prispevek.title }}
         </a>
       </h3>
-      <p>{{ prispevek.excerpt }}</p>
-    </li>
+      
+      <p class="karta-anotace">{{ prispevek.excerpt | strip_html | truncatewords: 15 }}</p>
+    </div>
   {% endfor %}
-</ul>
+</div>
