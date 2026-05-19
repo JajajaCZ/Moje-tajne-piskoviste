@@ -12,7 +12,7 @@ permalink: /
 
 <div class="piskoviste-grid">
   {% for prispevek in vsechny_prispevky limit: 6 %}
-    <div class="piskoviste-karta">
+    <div class="piskoviste-karta {% if prispevek.collection == 'projekty' %}karta-projekt{% else %}karta-clanek{% endif %}">
       <div class="karta-meta">
         <span class="karta-datum">{{ prispevek.date | date: "%d. %m. %Y" }}</span>
         <span class="karta-tag">

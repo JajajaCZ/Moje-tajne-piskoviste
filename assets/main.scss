@@ -1,5 +1,5 @@
----
----
+/*---
+---*/
 @import "minima";
 
 body{
@@ -76,6 +76,8 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   justify-content: flex-start !important;
   min-height: 180px !important; /* Aby byly všechny kartičky stejně vysoké */
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  position: relative !important; /* Nutné pro správné umístění emoji uvnitř */
+  overflow: hidden !important;   /* Ořízne emoji, pokud by lezlo z kartičky ven */
 
   /* Efekt při najetí myší na kartičku */
   &:hover {
@@ -83,7 +85,36 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
     border-color: #ffffff !important;
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08) !important;
   }
+
+  /* Společný základ pro vodoznak */
+  &::before {
+    position: absolute !important;
+    bottom: -10px !important;    /* Posune ho do pravého dolního rohu */
+    right: -10px !important;
+    font-size: 5.5rem !important; /* Udělá emoji obrovské */
+    line-height: 1 !important;
+    opacity: 0.04 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
+    pointer-events: none !important; /* Myš bude emoji ignorovat a klikne na text */
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+  }
+
+  /* Při najetí myší na kartičku se emoji trochu zvýrazní a pootočí */
+  &:hover::before {
+    opacity: 0.08 !important;   /* O krapet víc se rozsvítí (8 %) */
+    transform: scale(1.1) rotate(-10deg) !important; /* Jemně se zvětší a nakloní */
+  }
 }
+
+/* Konkrétní emoji pro ČLÁNKY (Bloček) */
+.karta-clanek::before {
+  content: "📝" !important;
+}
+
+/* Konkrétní emoji pro PROJEKTY (Kladivo a klíč) */
+.karta-projekt::before {
+  content: "🛠️" !important;
+}
+
 
 /* Prvky uvnitř kartičky */
 .karta-meta {
