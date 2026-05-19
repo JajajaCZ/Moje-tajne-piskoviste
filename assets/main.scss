@@ -170,6 +170,11 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   line-height: 1.4 !important;
 }
 
+.home .post-title,
+h1.post-title:first-of-type {
+  display: none !important;
+}
+
 /* Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo */
 @media (max-width: 768px) {
   .piskoviste-grid {

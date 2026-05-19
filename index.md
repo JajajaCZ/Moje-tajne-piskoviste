@@ -1,7 +1,6 @@
 ---
 layout: page
-title: ""
-seo_title: "Moje tajné pískoviště | Vítejte"
+title: "Moje tajné pískoviště | Vítejte"
 permalink: /
 ---
 
