@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   min-height: 180px !important; /* Aby byly všechny kartičky stejně vysoké */
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
 
-  // Efekt při najetí myší na kartičku
+  /* Efekt při najetí myší na kartičku */
   &:hover {
     transform: translateY(-5px) !important;
     border-color: #ffffff !important;
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   }
 }
 
-// Prvky uvnitř kartičky
+/* Prvky uvnitř kartičky */
 .karta-meta {
   display: flex !important;
   justify-content: space-between !important;
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   line-height: 1.4 !important;
 }
 
-// Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo
+/* Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo */
 @media (max-width: 768px) {
   .piskoviste-grid {
     grid-template-columns: 1fr !important;
