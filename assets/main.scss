@@ -88,9 +88,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 
   /* Společný základ pro vodoznak */
   &::before {
-    position: absolute !important;
-    bottom: -10px !important;    /* Posune ho do pravého dolního rohu */
-    right: -10px !important;
+    margin:auto;
     font-size: 5.5rem !important; /* Udělá emoji obrovské */
     line-height: 1 !important;
     opacity: 0.04 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
