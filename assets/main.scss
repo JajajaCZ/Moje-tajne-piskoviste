@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   filter: brightness(1.2) !important;       /* Rozsvítí/rozjasní obrázek o 20 % */
 }
 
-/ HLAVNÍ MŘÍŽKA - Donutí kartičky stát 3 a 3 vedle sebe
+/* HLAVNÍ MŘÍŽKA - Donutí kartičky stát 3 a 3 vedle sebe */
 .piskoviste-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important; 
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   clear: both !important;
 }
 
-// VZHLED SAMOTNÉ KARTIČKY (Krabice)
+/* VZHLED SAMOTNÉ KARTIČKY (Krabice) */
 .piskoviste-karta {
   background-color: #1a1a1a !important; /* Viditelné šedivější pozadí krabičky */
   border: 1px solid #333333 !important; /* Přiznaný rámeček okolo kartičky */
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 
 .karta-datum {
   font-size: 0.8rem !important;
-  color: #ffffff !important;
+  color: #888888 !important;
 }
 
 .karta-tag {
