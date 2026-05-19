@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Domů
+title: "Domů"
 permalink: /
 ---
 
