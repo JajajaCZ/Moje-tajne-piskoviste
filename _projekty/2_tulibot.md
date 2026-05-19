@@ -3,7 +3,6 @@ layout: post
 title: "Tuli-bot"
 date: 2026-05-19
 ---
-
 # Jednoduchý moderující discord bot
 
 Myšlenka byla zprvu jednoduchá. Udělat moderačního bota pro discord. Přestože je stále ve vývoji a asi to ještě nějaký čas potrvá, šlo spíše o hraní si s pythonem. Základní myšlenka tohoto bota je vycenzurovat nejběžnější sprostá slova v ČJ/AJ a odpovědět na ně vtipným obrázkem s tuleněm. Od toho se jmenuje Tuli-bot Možnost přidávat slova na BL/WL a fun list, který slova necenzuruje, ale spíš memuje.

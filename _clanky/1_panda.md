@@ -3,8 +3,8 @@ layout: post
 title: "Panda červená"
 date: 2026-05-19
 ---
+# Panda červená: Skrytý klenot horských lesů
 
-##Panda červená: Skrytý klenot horských lesů
 Panda červená (Ailurus fulgens) je jedním z nejzajímavějších a nejroztomilejších tvorů naší planety. I když sdílí jméno s populární pandou velkou, vývojově má mnohem blíže k mývalům, skunkům a lasicím. Je to zkrátka jedinečný originál.
 
 Kde žije a jak vypadá?

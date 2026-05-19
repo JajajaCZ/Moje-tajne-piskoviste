@@ -3,7 +3,7 @@ layout: post
 title: "Webové stránky"
 date: 2026-05-19
 ---
-##Poslední změny
+# Poslední změny
 
 1. Odstranění chyb a čistka
 Vyřešení složky Archív: Zjistili jsme, že Jekyll padal kvůli chybějící složce/diakritice, a ujasnili si, jak soubory archivovat nebo ignorovat v konfiguraci.
