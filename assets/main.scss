@@ -88,10 +88,15 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 
   /* Společný základ pro vodoznak */
   &::before {
-    top: 50% !important;
-    left: 50% !important;
+    width: 100% !important;       /* Roztáhne pseudo-element přes celou kartu */
+    height: 100% !important;      /* Roztáhne ho i na výšku */
+    top: 0 !important;            /* Ukotvíme ho přesně na rohy karty */
+    left: 0 !important;
+    display: flex !important;     /* Zapneme moderní Flexbox */
+    justify-content: center !important; /* Vycentruje emoji vodorovně */
+    align-items: center !important;     /* Vycentruje emoji svisle */
+    font-size: 10rem !important;
     transform: translate(-50%, -50%) !important;
-    font-size: 8rem !important; /* Udělá emoji obrovské */
     line-height: 1 !important;
     opacity: 0.03 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
     pointer-events: none !important; /* Myš bude emoji ignorovat a klikne na text */
