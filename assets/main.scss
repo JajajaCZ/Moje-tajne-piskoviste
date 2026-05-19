@@ -55,3 +55,86 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   transform: scale(1.05) !important;       /* Jemně zvětší pandu o 5 % */
   filter: brightness(1.2) !important;       /* Rozsvítí/rozjasní obrázek o 20 % */
 }
+
+/ HLAVNÍ MŘÍŽKA - Donutí kartičky stát 3 a 3 vedle sebe
+.piskoviste-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; 
+  gap: 25px !important; 
+  margin: 30px 0 !important;
+  clear: both !important;
+}
+
+// VZHLED SAMOTNÉ KARTIČKY (Krabice)
+.piskoviste-karta {
+  background-color: #1a1a1a !important; /* Viditelné šedivější pozadí krabičky */
+  border: 1px solid #333333 !important; /* Přiznaný rámeček okolo kartičky */
+  border-radius: 8px !important;
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 180px !important; /* Aby byly všechny kartičky stejně vysoké */
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+
+  // Efekt při najetí myší na kartičku
+  &:hover {
+    transform: translateY(-5px) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+// Prvky uvnitř kartičky
+.karta-meta {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 12px !important;
+  width: 100% !important;
+}
+
+.karta-datum {
+  font-size: 0.8rem !important;
+  color: #888888 !important;
+}
+
+.karta-tag {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+}
+
+.karta-nadpis {
+  margin: 0 0 10px 0 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.3 !important;
+  
+  .karta-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    
+    &:hover {
+      color: #ffffff !important;
+      text-decoration: underline !important;
+    }
+  }
+}
+
+.karta-anotace {
+  font-size: 0.85rem !important;
+  color: #aaaaaa !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+// Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo
+@media (max-width: 768px) {
+  .piskoviste-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
