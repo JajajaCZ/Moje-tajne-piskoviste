@@ -188,8 +188,8 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
     justify-content: space-between !important; /* Logo vlevo, menu vpravo */
     align-items: center !important; /* Vycentrování na střed výšky */
     padding: 5px 15px !important;   /* Původně bylo 10px 15px */
-    height: 60px !important;
-    min-height: 60px !important;        /* Původně bylo 90px */
+    height: 75px !important;
+    min-height: 75px !important;        /* Původně bylo 90px */
     background-color: transparent !important;
   }
 
@@ -197,7 +197,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
     margin-right: 10px !important;
     
     img {
-      max-height: 80px !important; /* Zmenšení loga na mobilu */
+      max-height: 70px !important; /* Zmenšení loga na mobilu */
     }
   }
 
