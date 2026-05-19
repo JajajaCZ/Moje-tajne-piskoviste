@@ -88,24 +88,27 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 
   /* Společný základ pro vodoznak */
   &::before {
-    width: 100% !important;       /* Roztáhne pseudo-element přes celou kartu */
-    height: 100% !important;      /* Roztáhne ho i na výšku */
-    top: 0 !important;            /* Ukotvíme ho přesně na rohy karty */
-    left: 0 !important;
-    display: flex !important;     /* Zapneme moderní Flexbox */
-    justify-content: center !important; /* Vycentruje emoji vodorovně */
-    align-items: center !important;     /* Vycentruje emoji svisle */
-    font-size: 10rem !important;
-    line-height: 1 !important;
-    opacity: 0.03 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
-    pointer-events: none !important; /* Myš bude emoji ignorovat a klikne na text */
-    transition: transform 0.3s ease, opacity 0.3s ease !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  /* Tohle je klíč: transformace posune přesně STŘED emoji na STŘED karty a s ničím jiným nehne */
+  transform: translate(-50%, -50%) !important; 
+
+  font-size: 8rem !important;   /* Trochu to zmenšíme na 8rem, aby to nebylo obří a nerozbíjelo to okraje */
+  line-height: 1 !important;
+  display: block !important;    /* Vrátíme klasický block */
+  margin: 0 !important;
+  padding: 0 !important;
+
+  opacity: 0.03 !important;     /* Necháme na 3 %, aby to bylo krásně průhledné pozadí */
+  pointer-events: none !important;
+  z-index: 0 !important;        /* Natvrdo to pošleme do úplného pozadí spodní vrstvy */
   }
 
   /* Při najetí myší na kartičku se emoji trochu zvýrazní a pootočí */
   &:hover::before {
     opacity: 0.06 !important;   /* O krapet víc se rozsvítí (8 %) */
-    transform: scale(1.1) rotate(5deg) !important;
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg) !important;
   }
 }
 
