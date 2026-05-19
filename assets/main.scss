@@ -194,7 +194,21 @@ post-header {
   margin-bottom: 20px !important;
 }
 
+/* 1. KONEČNÁ LIKVIDACE DÍRY POD HEADEREM */
+.page-content {
+  padding-top: 10px !important; /* Minima tu mívá natvrdo 40px nebo 2rem */
+}
 
+.wrapper {
+  margin-top: 0 !important;
+}
+
+.post-header, .post-title, .page-title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
 
 
 
