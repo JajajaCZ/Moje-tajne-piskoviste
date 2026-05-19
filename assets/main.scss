@@ -88,18 +88,20 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
 
   /* Společný základ pro vodoznak */
   &::before {
-    margin:auto;
-    font-size: 5.5rem !important; /* Udělá emoji obrovské */
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 8rem !important; /* Udělá emoji obrovské */
     line-height: 1 !important;
-    opacity: 0.04 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
+    opacity: 0.03 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
     pointer-events: none !important; /* Myš bude emoji ignorovat a klikne na text */
     transition: transform 0.3s ease, opacity 0.3s ease !important;
   }
 
   /* Při najetí myší na kartičku se emoji trochu zvýrazní a pootočí */
   &:hover::before {
-    opacity: 0.08 !important;   /* O krapet víc se rozsvítí (8 %) */
-    transform: scale(1.1) rotate(-10deg) !important; /* Jemně se zvětší a nakloní */
+    opacity: 0.06 !important;   /* O krapet víc se rozsvítí (8 %) */
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg) !important;
   }
 }
 
