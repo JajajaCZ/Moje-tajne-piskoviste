@@ -17,3 +17,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   background-color: #0A0A0A !important;
   border-bottom: 1px solid #FFFFFF !important; /* Velmi jemná dělicí linka */
 }
+
+.site-title img {
+  padding: 15px 0; /* 15 pixelů mezera nahoře a dole, 0 pixelů po stranách */
+}
