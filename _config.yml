@@ -1,6 +1,10 @@
 title: Moje tajné pískoviště
+description: >-
+  Osobní blog, kde píšu o tom, jak se učím věci z IT světa a občas píšu o tom, co mě zajímá.
+url: "https://jajajacz.github.io"
 theme: minima
 baseurl: "/Moje-tajne-piskoviste"
+author: "JajajaCZ"
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
@@ -13,3 +17,5 @@ collections:
   projekty:      # Tímto zakládáme novou sekci
     output: true
     permalink: /projekty/:title/
+
+
