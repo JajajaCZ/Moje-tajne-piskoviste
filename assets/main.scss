@@ -96,7 +96,6 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
     justify-content: center !important; /* Vycentruje emoji vodorovně */
     align-items: center !important;     /* Vycentruje emoji svisle */
     font-size: 10rem !important;
-    transform: translate(-50%, -50%) !important;
     line-height: 1 !important;
     opacity: 0.03 !important;    /* Extrémně jemná průhlednost (4 %), aby to nerušilo text */
     pointer-events: none !important; /* Myš bude emoji ignorovat a klikne na text */
@@ -106,7 +105,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   /* Při najetí myší na kartičku se emoji trochu zvýrazní a pootočí */
   &:hover::before {
     opacity: 0.06 !important;   /* O krapet víc se rozsvítí (8 %) */
-    transform: translate(-50%, -50%) scale(1.1) rotate(5deg) !important;
+    transform: scale(1.1) rotate(5deg) !important;
   }
 }
 
