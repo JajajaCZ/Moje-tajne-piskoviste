@@ -12,6 +12,34 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   color: #FFFFFF !important;
 }
 
+.site-header {
+  // Aktivuje pokročilé zarovnání pro logo a menu
+  .wrapper {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important; /* Tohle perfektně vycentruje text menu na střed výšky loga */
+    min-height: 140px; /* Přizpůsobí výšku lišty tvému novému velkému logu */
+  }
+
+  // Stylování odkazů v menu (Domů, Projekty)
+  .page-link {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 1.1rem !important;
+    color: #999999 !important; /* Ztlumíme tu ostrou bílou na příjemnou šedou */
+    margin-left: 25px !important;
+    transition: color 0.3s ease, border-bottom 0.3s ease !important;
+    padding: 8px 0 !important;
+    border-bottom: 2px solid transparent !important; /* Příprava pro linku pod textem */
+  }
+
+  // Efekt při najetí myší na odkaz v menu
+  .page-link:hover {
+    color: #FFFFFF !important; /* Rozsvítí se čistě bíle */
+    border-bottom: 2px solid #FFFFFF !important; /* Podtrhne se čistou linkou, což ladí s hlavní dělicí čárou */
+    text-decoration: none !important;
+  }
+}
 // Úprava horního menu/headeru, aby nesvítil bíle
 .site-header {
   background-color: #0A0A0A !important;
