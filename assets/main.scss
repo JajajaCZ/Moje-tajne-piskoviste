@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
   }
 }
 
-/* MOBILNÍ ZOBRAZENÍ: VŠE V JEDNÉ ŘADĚ VEDLE SEBE */
+/* MOBILNÍ ZOBRAZENÍ: VŠE V JEDNÉ ŘADĚ VEDLE SEBE (OPRAVA POZADÍ) */
 @media screen and (max-width: 600px) {
   .site-header .wrapper {
     display: flex !important;
@@ -185,41 +185,38 @@ h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
     align-items: center !important; /* Vycentrování na střed výšky */
     padding: 10px 15px !important;
     height: 90px !important; /* Pevná výška headeru na mobilu */
+    background-color: transparent !important;
   }
 
   .site-header .site-title {
     margin-right: 10px !important;
     
     img {
-      /* Na mobilu logo mírně zmenšíme, aby zbylo dost místa pro texty */
-      max-height: 70px !important; 
+      max-height: 70px !important; /* Zmenšení loga na mobilu */
     }
   }
 
-  /* Schováme ikonu burger menu, pokud v HTML ještě zbyla */
-  .site-nav .menu-icon, 
-  .site-nav .nav-trigger {
-    display: none !important;
-  }
-
+  /* TOTÁLNÍ LIKVIDACE BÍLÉHO POZADÍ MOBILNÍHO MENU */
   .site-nav {
     position: static !important;
     float: none !important;
     margin: 0 !important;
+    background-color: transparent !important; /* Tohle zničí tu bílou barvu na pozadí! */
+    border: none !important; /* Odstraní případný šedý rámeček */
 
     .trigger {
       display: flex !important; /* Seřadí odkazy do jedné řady vedle sebe */
-      background: none !important;
+      background-color: transparent !important; /* Pojistka pro vnitřek menu */
+      padding: 0 !important;
     }
 
     .page-link {
       display: inline-block !important;
-      /* Menší písmo a mezery, aby se to na displej telefonu hezky vešlo */
       font-size: 0.95rem !important; 
       margin-left: 12px !important; 
       margin-right: 0 !important;
       padding: 0 !important;
-      color: #ffffff !important;
+      color: #ffffff !important; /* Bílé nápisy */
     }
   }
 }
