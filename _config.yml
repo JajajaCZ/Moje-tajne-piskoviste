@@ -5,3 +5,11 @@ baseurl: "/Moje-tajne-piskoviste"
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
 github_username: null
+
+collections:
+  clanky:
+    output: true
+    permalink: /clanky/:name/
+  projekty:      # Tímto zakládáme novou sekci
+    output: true
+    permalink: /projekty/:name/
