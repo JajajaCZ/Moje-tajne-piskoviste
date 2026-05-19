@@ -175,6 +175,30 @@ h1.post-title:first-of-type {
   display: none !important;
 }
 
+post-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.page-title, .post-title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2. ZVĚTŠENÍ H1, ABY BYLO VĚTŠÍ NEŽ H2 */
+.post-content h1:first-of-type,
+#vitesjte-na-mesm-piskovistes { /* Pro jistotu cílíme i na ID, které Jekyll vygeneruje z nadpisu */
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+
+
+
+
+
 /* Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo */
 @media (max-width: 768px) {
   .piskoviste-grid {
