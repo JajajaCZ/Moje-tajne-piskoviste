@@ -13,6 +13,7 @@ permalink: /
 <div class="piskoviste-grid">
   {% for prispevek in vsechny_prispevky limit: 6 %}
     <div class="piskoviste-karta {% if prispevek.collection == 'projekty' %}karta-projekt{% else %}karta-clanek{% endif %}">
+      
       <div class="karta-meta">
         <span class="karta-datum">{{ prispevek.date | date: "%d. %m. %Y" }}</span>
         <span class="karta-tag">
@@ -21,20 +22,22 @@ permalink: /
       </div>
       
       <h3 class="karta-nadpis">
-      <a class="karta-link" href="{{ prispevek.url | relative_url }}">
-        {{ prispevek.title }}
-      </a>
+        <a class="karta-link" href="{{ prispevek.url | relative_url }}">
+          {{ prispevek.title }}
+        </a>
       </h3>
-
-    {% if prispevek.podnadpis %}
-      <h4 class="karta-podnadpis" style="font-size: 1.1rem; font-weight: 600; margin-top: 5px; margin-bottom: 5px; color: #e0e0e0;">
-        {{ prispevek.podnadpis }}
-      </h4>
-    {% endif %}
-
-    <p class="karta-anotace" style="margin-top: 5px;">
-      {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
-    </p>
+      
+      {% if prispevek.podnadpis %}
+        <h4 class="karta-podnadpis" style="font-size: 1.0rem; font-weight: 600; margin-top: 4px; margin-bottom: 6px; color: #e0e0e0; opacity: 0.9;">
+          {{ prispevek.podnadpis }}
+        </h4>
+      {% endif %}
+      
+      <p class="karta-anotace" style="margin-top: 4px;">
+        {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
+      </p>
+      
     </div>
   {% endfor %}
+</div>
 </div>
