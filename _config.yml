@@ -6,7 +6,7 @@ baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
 plugins:
   - jekyll-remote-theme
-remote_theme: scisneromam/jekyll-clean@master
+remote_theme: scisneromam/jekyll-clean@main
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
