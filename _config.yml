@@ -7,7 +7,7 @@ author: "JajajaCZ"
 plugins:
   - jekyll-remote-theme
 
-aremote_theme: scisneromam/jekyll-clean@main
+remote_theme: scisneromam/jekyll-clean@main
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
