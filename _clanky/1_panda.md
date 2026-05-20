@@ -2,6 +2,8 @@
 layout: post
 title: "Panda červená"
 date: 2026-05-19
+podnadpis: "Panda červená: Skrytý klenot horských lesů"
+excerpt: "Panda červená (Ailurus fulgens) je jedním z nejzajímavějších a nejroztomilejších tvorů naší planety. I když sdílí..."
 ---
 ## Panda červená: Skrytý klenot horských lesů
 

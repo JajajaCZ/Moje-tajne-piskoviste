@@ -2,6 +2,8 @@
 layout: post
 title: "Tuli-bot"
 date: 2026-05-19
+podnadpis: "Jednoduchý moderující discord bot"
+excerpt: "Myšlenka byla zprvu jednoduchá. Udělat moderačního bota pro..."
 ---
 ## Jednoduchý moderující discord bot
 
