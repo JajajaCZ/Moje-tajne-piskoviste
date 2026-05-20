@@ -26,15 +26,24 @@ permalink: /
           {{ prispevek.title }}
         </a>
       </h3>
-      
-      {% if prispevek.podnadpis %}
+
+      {% if prispevek.content contains '<h2' %}
+        {% assign h2_casti = prispevek.content | split: '<h2' %}
+        {% assign h2_konec = h2_casti[1] | split: '</h2>' %}
+        {% assign ciste_h2 = h2_konec[0] | split: '>' | last %}
+        
         <h4 class="karta-podnadpis" style="font-size: 1.0rem; font-weight: 600; margin-top: 4px; margin-bottom: 6px; color: #e0e0e0; opacity: 0.9;">
-          {{ prispevek.podnadpis }}
+          {{ ciste_h2 | strip_html }}
         </h4>
       {% endif %}
       
       <p class="karta-anotace" style="margin-top: 4px;">
-        {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
+        {% if prispevek.content contains '<h2' %}
+          {% assign text_za_nadpisem = prispevek.content | split: '</h2>' | last %}
+          {{ text_za_nadpisem | strip_html | truncatewords: 12 }}
+        {% else %}
+          {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
+        {% endif %}
       </p>
       
     </div>
