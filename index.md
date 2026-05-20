@@ -21,12 +21,20 @@ permalink: /
       </div>
       
       <h3 class="karta-nadpis">
-        <a class="karta-link" href="{{ prispevek.url | relative_url }}">
-          {{ prispevek.title }}
-        </a>
+      <a class="karta-link" href="{{ prispevek.url | relative_url }}">
+        {{ prispevek.title }}
+      </a>
       </h3>
-      
-      <p class="karta-anotace">{{ prispevek.excerpt | strip_html | truncatewords: 12 }}</p>
+
+    {% if prispevek.podnadpis %}
+      <h4 class="karta-podnadpis" style="font-size: 1.1rem; font-weight: 600; margin-top: 5px; margin-bottom: 5px; color: #e0e0e0;">
+        {{ prispevek.podnadpis }}
+      </h4>
+    {% endif %}
+
+    <p class="karta-anotace" style="margin-top: 5px;">
+      {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
+    </p>
     </div>
   {% endfor %}
 </div>
