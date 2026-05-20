@@ -40,4 +40,3 @@ permalink: /
     </div>
   {% endfor %}
 </div>
-</div>
