@@ -2,9 +2,11 @@ title: Moje tajné pískoviště
 description: >-
   Osobní blog, kde píšu o tom, jak se učím věci z IT světa a občas píšu o tom, co mě zajímá.
 url: "https://jajajacz.github.io"
-theme: jekyll-clean
 baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
+plugins:
+  - jekyll-remote-theme
+remote_theme: scisneromam/jekyll-clean
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
