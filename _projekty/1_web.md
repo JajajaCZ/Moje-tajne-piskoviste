@@ -2,8 +2,6 @@
 layout: post
 title: "Webové stránky"
 date: 2026-05-19
-podnadpis: "Poslední změny"
-excerpt: "Vyřešení složky Archív: Zjistili jsme, že Jekyll padal kvůli chybějící složce/diakritice..."
 ---
 ## Poslední změny
 
