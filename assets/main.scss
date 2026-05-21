@@ -1,288 +1,122 @@
 ---
 ---
 
-body{
-    background-color: #0A0A0A !important;
-    color: #E0E0E0;
-}
+/* ==========================================================================
+   VLASTNÍ GRID PRO NEJNOVĚJŠÍ PŘÍSPĚVKY (TÉMA MIDNIGHT)
+   ========================================================================== */
 
-// Zajištění, aby byly vidět i všechny nadpisy a název webu
-h1, h2, h3, h4, h5, h6, .site-title, .site-nav .page-link {
-  color: #FFFFFF !important;
-}
-
-.site-header {
-  // Aktivuje pokročilé zarovnání pro logo a menu
-  .wrapper {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important; /* Tohle perfektně vycentruje text menu na střed výšky loga */
-    min-height: 140px; /* Přizpůsobí výšku lišty tvému novému velkému logu */
-  }
-
-  // Stylování odkazů v menu (Domů, Projekty)
-  .page-link {
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 1.4rem !important;
-    color: #FFFFFF !important; /* Ztlumíme tu ostrou bílou na příjemnou šedou */
-    margin-left: 25px !important;
-    transition: color 0.3s ease, border-bottom 0.3s ease !important;
-    padding: 8px 0 !important;
-    border-bottom: 2px solid transparent !important; /* Příprava pro linku pod textem */
-  }
-
-  // Efekt při najetí myší na odkaz v menu
-  .page-link:hover {
-    color: #FFFFFF !important; /* Rozsvítí se čistě bíle */
-    border-bottom: 2px solid #FFFFFF !important; /* Podtrhne se čistou linkou, což ladí s hlavní dělicí čárou */
-    text-decoration: none !important;
-  }
-}
-// Úprava horního menu/headeru, aby nesvítil bíle
-.site-header {
-  background-color: #0A0A0A !important;
-  border-bottom: 1px solid #FFFFFF !important;
-}
-
-.site-title img {
-  padding: 10px 0;
-  transition: transform 0.3s ease, filter 0.3s ease !important;
-}
-
-.site-title:hover img {
-  transform: scale(1.05) !important;       /* Jemně zvětší pandu o 5 % */
-  filter: brightness(1.2) !important;       /* Rozsvítí/rozjasní obrázek o 20 % */
-}
-
-/* HLAVNÍ MŘÍŽKA - Donutí kartičky stát 3 a 3 vedle sebe */
+/* Hlavní kontejner mřížky (3 sloupce na PC, 1 na mobilu) */
 .piskoviste-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; 
-  gap: 25px !important; 
-  margin: 30px 0 !important;
-  clear: both !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+  clear: both;
 }
 
-/* VZHLED SAMOTNÉ KARTIČKY (Krabice) */
+/* Stylování samotné krabičky (karty) */
 .piskoviste-karta {
-  background-color: #1a1a1a !important; /* Viditelné šedivější pozadí krabičky */
-  border: 1px solid #333333 !important; /* Přiznaný rámeček okolo kartičky */
-  border-radius: 8px !important;
-  padding: 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  min-height: 180px !important; /* Aby byly všechny kartičky stejně vysoké */
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
-  position: relative !important; /* Nutné pro správné umístění emoji uvnitř */
-  overflow: hidden !important;   /* Ořízne emoji, pokud by lezlo z kartičky ven */
+  background-color: #1e1e1e; /* Příjemné šedé pozadí ladící s Midnight tématem */
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
-  /* Efekt při najetí myší na kartičku */
+  /* Efekt při najetí myší na kartu */
   &:hover {
-    transform: translateY(-5px) !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-5px);
+    border-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.08);
   }
 
-  /* Společný základ pro vodoznak */
+  /* Společný základ pro emoji vodoznak na pozadí */
   &::before {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  /* Tohle je klíč: transformace posune přesně STŘED emoji na STŘED karty a s ničím jiným nehne */
-  transform: translate(-50%, -50%) !important; 
-
-  font-size: 8rem !important;   /* Trochu to zmenšíme na 8rem, aby to nebylo obří a nerozbíjelo to okraje */
-  line-height: 1 !important;
-  display: block !important;    /* Vrátíme klasický block */
-  margin: 0 !important;
-  padding: 0 !important;
-
-  opacity: 0.03 !important;     /* Necháme na 3 %, aby to bylo krásně průhledné pozadí */
-  pointer-events: none !important;
-  z-index: 0 !important;        /* Natvrdo to pošleme do úplného pozadí spodní vrstvy */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    line-height: 1;
+    opacity: 0.03; /* Velmi decentní průhlednost */
+    pointer-events: none;
+    z-index: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  /* Při najetí myší na kartičku se emoji trochu zvýrazní a pootočí */
+  /* Jemné zvýraznění a pootočení vodoznaku při hoveru */
   &:hover::before {
-    opacity: 0.06 !important;   /* O krapet víc se rozsvítí (8 %) */
-    transform: translate(-50%, -50%) scale(1.1) rotate(5deg) !important;
+    opacity: 0.06;
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
   }
 }
 
-/* Konkrétní emoji pro ČLÁNKY (Bloček) */
-.karta-clanek::before {
-  content: "📝" !important;
-}
+/* Přiřazení konkrétních emoji podle třídy */
+.karta-clanek::before { content: "📝"; }
+.karta-projekt::before { content: "🛠️"; }
 
-/* Konkrétní emoji pro PROJEKTY (Kladivo a klíč) */
-.karta-projekt::before {
-  content: "🛠️" !important;
-}
+/* ==========================================================================
+   PRVKY UVNITŘ KARTIČKY
+   ========================================================================== */
 
-
-/* Prvky uvnitř kartičky */
 .karta-meta {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  margin-bottom: 12px !important;
-  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  z-index: 1;
 }
 
 .karta-datum {
-  font-size: 0.8rem !important;
-  color: #888888 !important;
+  font-size: 0.85rem;
+  color: #888888;
 }
 
 .karta-tag {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
-  padding: 3px 8px !important;
-  border-radius: 4px !important;
-  font-size: 0.75rem !important;
-  font-weight: bold !important;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 .karta-nadpis {
-  margin: 0 0 10px 0 !important;
-  font-size: 1.2rem !important;
-  line-height: 1.3 !important;
-  
-  .karta-link {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  z-index: 1;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+
     &:hover {
-      color: #ffffff !important;
-      text-decoration: underline !important;
+      text-decoration: underline;
     }
   }
 }
 
+/* Menší podnadpis pod hlavním názvem článku */
+.karta-podnadpis {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #cccccc;
+  margin: 0 0 8px 0;
+  z-index: 1;
+}
+
+/* Krátká textová anotace */
 .karta-anotace {
-  font-size: 0.85rem !important;
-  color: #aaaaaa !important;
-  margin: 0 !important;
-  line-height: 1.4 !important;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin: 0;
+  line-height: 1.4;
+  z-index: 1;
 }
-
-.home .post-title,
-h1.post-title:first-of-type {
-  display: none !important;
-}
-
-post-header {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-.page-title, .post-title {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 2. ZVĚTŠENÍ H1, ABY BYLO VĚTŠÍ NEŽ H2 */
-.post-content h1:first-of-type,
-#vitesjte-na-mesm-piskovistes { /* Pro jistotu cílíme i na ID, které Jekyll vygeneruje z nadpisu */
-  font-size: 2.2rem !important;
-  font-weight: 700 !important;
-  margin-top: 10px !important;
-  margin-bottom: 20px !important;
-}
-
-/* 1. KONEČNÁ LIKVIDACE DÍRY POD HEADEREM */
-.page-content {
-  padding-top: 10px !important; /* Minima tu mívá natvrdo 40px nebo 2rem */
-}
-
-.wrapper {
-  margin-top: 0 !important;
-}
-
-.post-header, .post-title, .page-title {
-  display: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 0 !important;
-}
-
-
-
-
-/* Mobilní verze: na malém displeji skočí pod sebe, aby se to nemačkalo */
-@media (max-width: 768px) {
-  .piskoviste-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* MOBILNÍ ZOBRAZENÍ: VŠE V JEDNÉ ŘADĚ VEDLE SEBE (OPRAVA POZADÍ) */
-@media screen and (max-width: 600px) {
-  .site-header{
-    line-height: inherit !important;
-  }
-  
-  .site-header .wrapper {
-    display: flex !important;
-    justify-content: space-between !important; /* Logo vlevo, menu vpravo */
-    align-items: center !important; /* Vycentrování na střed výšky */
-    padding: 5px 15px !important;   /* Původně bylo 10px 15px */
-    height: 75px !important;
-    min-height: 75px !important;        /* Původně bylo 90px */
-    background-color: transparent !important;
-  }
-
-  .site-header .site-title {
-    margin-right: 10px !important;
-    
-    img {
-      max-height: 70px !important; /* Zmenšení loga na mobilu */
-    }
-  }
-
-  /* TOTÁLNÍ LIKVIDACE BÍLÉHO POZADÍ MOBILNÍHO MENU */
-  .site-nav {
-    position: static !important;
-    float: none !important;
-    margin: 0 !important;
-    background-color: transparent !important; /* Tohle zničí tu bílou barvu na pozadí! */
-    border: none !important; /* Odstraní případný šedý rámeček */
-
-    .trigger {
-      display: flex !important; /* Seřadí odkazy do jedné řady vedle sebe */
-      background-color: transparent !important; /* Pojistka pro vnitřek menu */
-      padding: 0 !important;
-    }
-
-    .page-link {
-      display: inline-block !important;
-      font-size: 1rem !important; 
-      margin-left: 12px !important; 
-      margin-right: 0 !important;
-      padding: 0 !important;
-      color: #ffffff !important; /* Bílé nápisy */
-    }
-  }
-
-  /* ZMENŠENÍ TEXTŮ PRO MOBILNÍ DISPLEJ */
-  .post-content h1:first-of-type {
-    font-size: 1.5rem !important; /* Zmenšení hlavního nadpisu z obřích 2.2rem */
-    margin-top: 15px !important;
-    margin-bottom: 10px !important;
-  }
-
-  .post-listing-heading {
-    font-size: 1.15rem !important; /* Zmenšení nadpisu Nejnovější příspěvky */
-    margin-top: 25px !important;
-    margin-bottom: 15px !important;
-  }
-
-  /* Volitelné: Mírné zmenšení nadpisů uvnitř samotných kartiček, ať to ladí */
-  .karta-nadpis {
-    font-size: 1.1rem !important;
-  }
-}
-
