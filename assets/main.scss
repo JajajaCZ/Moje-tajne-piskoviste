@@ -120,3 +120,88 @@
   line-height: 1.4;
   z-index: 1;
 }
+
+/* ==========================================================================
+   OBNOVA PŮVODNÍHO VELKÉHO ZÁHLAVÍ (LOGO VEDLE MENU)
+   ========================================================================== */
+
+/* Pozadí pro celou horní lištu */
+.site-header-container {
+  background-color: #0A0A0A; /* Černá barva jako dřív */
+  border-bottom: 1px solid #222222;
+  width: 100%;
+}
+
+/* Vnitřní zarovnání - flexbox hodí logo vlevo a menu vpravo */
+.site-header .wrapper {
+  max-width: 860px; /* Srovná se s šířkou textu Midnightu */
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important; /* Vertikální vycentrování na střed */
+  min-height: 120px; /* Zvětšená výška lišty pro velké logo */
+}
+
+/* Zvětšení loga a nastavení kulatých rohů */
+.site-title {
+  display: flex;
+  align-items: center;
+  
+  img {
+    max-height: 90px !important; /* Zvětšení loga na PC */
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: #ffffff;
+    }
+  }
+}
+
+/* Stylování a zvětšení menu */
+.site-nav {
+  display: flex;
+  align-items: center;
+
+  .trigger {
+    display: flex !important;
+    gap: 25px; /* Mezera mezi odkazy */
+  }
+
+  .page-link {
+    font-family: "Segoe UI", Roboto, sans-serif !important;
+    font-size: 1.3rem !important; /* Větší písmo odkazů */
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+
+    &:hover {
+      color: #4183c4 !important; /* Hezká modrá při najetí */
+    }
+  }
+}
+
+/* Odsazení samotného obsahu pod menu, aby na sebe nebyly nalepené */
+.wrapper {
+  margin-top: 40px !important;
+}
+
+/* REPRODUKCE PRO MOBILNÍ ZAŘÍZENÍ */
+@media screen and (max-width: 600px) {
+  .site-header .wrapper {
+    min-height: 90px;
+    padding: 10px 20px;
+  }
+
+  .site-title img {
+    max-height: 65px !important; /* Mírné zmenšení loga na mobilu */
+  }
+
+  .site-nav .page-link {
+    font-size: 1.1rem !important;
+  }
+}
