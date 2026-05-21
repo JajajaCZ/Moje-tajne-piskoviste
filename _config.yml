@@ -4,10 +4,8 @@ description: >-
 url: "https://jajajacz.github.io"
 baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
-plugins:
-  - jekyll-remote-theme
 
-remote_theme: pietromenna/jekyll-clean-dark@master
+theme: null
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
