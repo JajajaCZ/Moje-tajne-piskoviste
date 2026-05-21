@@ -4,8 +4,7 @@ description: >-
 url: "https://jajajacz.github.io"
 baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
-
-theme: null
+theme: jekyll-theme-midnight
 
 
 # Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
