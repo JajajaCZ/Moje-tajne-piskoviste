@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Moje tajné pískoviště | Vítejte"
 permalink: /
 ---
@@ -26,8 +26,8 @@ permalink: /
           {{ prispevek.title }}
         </a>
       </h3>
-      
-      <p class="karta-anotace" style="margin-top: 4px;">
+
+      <p class="karta-anotace">
         {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
       </p>
       
