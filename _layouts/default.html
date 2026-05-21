@@ -4,33 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-    
-    <style>
-      body { padding-top: 0 !important; }
-      .site-header-fixed {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #0A0A0A !important;
-        border-bottom: 1px solid #222222 !important;
-        z-index: 9999 !important;
-      }
-    </style>
   </head>
   <body>
 
-    <div class="site-header-fixed">
-      {% include header.html %}
-    </div>
+    {% include header.html %}
 
-    <div class="wrapper" style="margin-top: 160px !important;">
-      <section>
-        {{ content }}
-      </section>
-    </div>
+    <main class="hlavni-obsah">
+      {{ content }}
+    </main>
 
-    </body>
+  </body>
 </html>

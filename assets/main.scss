@@ -1,176 +1,157 @@
 ---
 ---
 
-/* GLOBÁLNÍ NASTAVENÍ PROMidnight */
+/* 1. GLOBÁLNÍ RESET A ČERNÝ DESIGN */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #0A0A0A !important;
-  color: #E0E0E0 !important;
+  background-color: #0A0A0A; /* Černo-šedé pozadí celého webu */
+  color: #E0E0E0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
+  margin-bottom: 20px;
 }
 
-/* 1. STYLOVÁNÍ HEADERU (Zavolaného z header.html) */
+/* 2. TVŮJ NASTYLÝ HEADER (LOGO VEDLE MENU) */
 .site-header {
-  background-color: transparent !important; /* Pozadí drží obal v layoutu */
-  border: none !important;
+  background-color: #000000; /* Úplně černá lišta */
+  border-bottom: 1px solid #222222;
+  width: 100%;
+  padding: 15px 0;
 
   .wrapper {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    min-height: 140px !important;
-    max-width: 860px !important;
-    margin: 0 auto !important;
-    padding: 0 20px !important;
+    max-width: 1000px; /* Šířka obsahu hlavičky */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Logo vlevo, menu vpravo */
+    align-items: center;
+    min-height: 110px;
   }
 
-  /* Stylování odkazů v menu (Domů, Projekty, Články) */
+  /* Kulaté zvětšené logo */
+  .site-title img {
+    max-height: 95px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    display: block;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  /* Odkazy v menu */
   .page-link {
-    font-family: "Segoe UI", Roboto, sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 1.4rem !important;
-    color: #FFFFFF !important;
-    margin-left: 25px !important;
-    transition: color 0.3s ease, border-bottom 0.3s ease !important;
-    padding: 8px 0 !important;
-    border-bottom: 2px solid transparent !important;
-    text-decoration: none !important;
-  }
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-left: 25px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
 
-  .page-link:hover {
-    color: #FFFFFF !important;
-    border-bottom: 2px solid #FFFFFF !important;
+    &:hover {
+      border-color: #FFFFFF; /* Podtržení při najetí */
+    }
   }
 }
 
-/* Animace a vzhled kulatého loga */
-.site-title img {
-  max-height: 100px !important;
-  width: auto !important;
-  border-radius: 50% !important;
-  border: 2px solid #333333 !important;
-  transition: transform 0.3s ease, filter 0.3s ease !important;
+/* 3. KONTEJNER PRO OBSAH STRÁNKY UNDER HEADEREM */
+.hlavni-obsah {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.site-title:hover img {
-  transform: scale(1.05) !important;
-  filter: brightness(1.2) !important;
-}
-
-/* 2. HLAVNÍ MŘÍŽKA PRO KARTIČKY */
+/* 4. TVŮJ DOKONALÝ GRID PRO KARTIČKY */
 .piskoviste-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important; 
-  gap: 25px !important; 
-  margin: 30px 0 !important;
-  clear: both !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .piskoviste-karta {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333333 !important;
-  border-radius: 8px !important;
-  padding: 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  min-height: 180px !important;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
-  position: relative !important;
-  overflow: hidden !important;
+  background-color: #161616; /* Šedá kartička */
+  border: 1px solid #262626;
+  border-radius: 8px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 190px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: translateY(-5px) !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08) !important;
+    transform: translateY(-5px);
+    border-color: #444444;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
   }
 
-  /* Emoji vodoznak */
+  /* Emojis na pozadí */
   &::before {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important; 
-    font-size: 8rem !important;   
-    line-height: 1 !important;
-    opacity: 0.03 !important;     
-    pointer-events: none !important;
-    z-index: 0 !important;        
-  }
-
-  &:hover::before {
-    opacity: 0.06 !important;   
-    transform: translate(-50%, -50%) scale(1.1) rotate(5deg) !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
-.karta-clanek::before { content: "📝" !important; }
-.karta-projekt::before { content: "🛠️" !important; }
+.karta-clanek::before { content: "📝"; }
+.karta-projekt::before { content: "🛠️"; }
 
 .karta-meta {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  margin-bottom: 12px !important;
-  z-index: 1 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  z-index: 1;
 }
 
 .karta-datum {
-  font-size: 0.8rem !important;
-  color: #888888 !important;
+  font-size: 0.85rem;
+  color: #777777;
 }
 
 .karta-tag {
-  background-color: #2a2a2a !important;
-  color: #ffffff !important;
-  padding: 3px 8px !important;
-  border-radius: 4px !important;
-  font-size: 0.75rem !important;
-  font-weight: bold !important;
+  background-color: #222222;
+  color: #AAAAAA;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
 }
 
 .karta-nadpis {
-  margin: 0 0 10px 0 !important;
-  font-size: 1.2rem !important;
-  line-height: 1.3 !important;
-  z-index: 1 !important;
-  
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  z-index: 1;
+
   .karta-link {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-  }
-  .karta-link:hover {
-    text-decoration: underline !important;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
   }
 }
 
 .karta-anotace {
-  font-size: 0.85rem !important;
-  color: #aaaaaa !important;
-  margin: 0 !important;
-  line-height: 1.4 !important;
-  z-index: 1 !important;
-}
-
-/* Skrytí duplicitních nadpisů vygenerovaných šablonou */
-.page-title, .post-title, .home .post-title {
-  display: none !important;
-}
-
-/* MOBILNÍ RESPONSIVITA */
-@media (max-width: 768px) {
-  .piskoviste-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .site-header .wrapper {
-    min-height: 90px !important;
-  }
-  
-  .site-title img {
-    max-height: 70px !important;
-  }
+  font-size: 0.9rem;
+  color: #999999;
+  z-index: 1;
 }

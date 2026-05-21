@@ -5,7 +5,7 @@ baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
 
 # Aktivace oficiálního GitHub tématu Midnight
-theme: jekyll-theme-midnight
+theme: jekyll-theme-minimal
 
 # Nezbytné pluginy, které Midnight vyžaduje pro správný běh na GitHubu
 plugins:
