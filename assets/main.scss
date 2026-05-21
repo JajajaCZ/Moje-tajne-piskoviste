@@ -1,6 +1,37 @@
 ---
 ---
 
+body {
+  padding-top: 0 !important;
+}
+
+.site-header-container {
+  background-color: #0A0A0A !important; /* Černá barva pozadí */
+  border-bottom: 1px solid #222222;
+  width: 100% !important;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+/* Úprava wrapperu uvnitř headeru pro správné zarovnání prvků */
+.site-header .wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 15px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  min-height: 110px;
+}
+
+/* Odsazení samotného těla webu pod headerem */
+body > .wrapper {
+  margin-top: 40px !important;
+  padding-top: 0 !important;
+}
+
 /* ==========================================================================
    VLASTNÍ GRID PRO NEJNOVĚJŠÍ PŘÍSPĚVKY (TÉMA MIDNIGHT)
    ========================================================================== */
