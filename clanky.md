@@ -5,8 +5,6 @@ permalink: /clanky/
 order: 1
 ---
 
-# Všechny články
-
 <div class="piskoviste-grid">
   {% for clanek in site.clanky %}
     <div class="piskoviste-karta karta-clanek">

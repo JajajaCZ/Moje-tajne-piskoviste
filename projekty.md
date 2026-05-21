@@ -5,8 +5,6 @@ permalink: /projekty/
 order: 2
 ---
 
-# Moje projekty
-
 <div class="piskoviste-grid">
   {% for projekt in site.projekty %}
     <div class="piskoviste-karta karta-projekt">
