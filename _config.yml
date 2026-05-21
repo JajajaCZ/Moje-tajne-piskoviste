@@ -1,21 +1,25 @@
-title: Moje tajné pískoviště
-description: >-
-  Osobní blog, kde píšu o tom, jak se učím věci z IT světa a občas píšu o tom, co mě zajímá.
+title: "Moje tajné pískoviště"
+description: "Osobní blog, kde píšu o tom, jak se učím věci z IT světa a občas píšu o tom, co mě zajímá."
 url: "https://jajajacz.github.io"
 baseurl: "/Moje-tajne-piskoviste"
 author: "JajajaCZ"
+
+# Aktivace oficiálního GitHub tématu Midnight
 theme: jekyll-theme-midnight
 
+# Nezbytné pluginy, které Midnight vyžaduje pro správný běh na GitHubu
+plugins:
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
 
-# Tímto kompletně vypneš zobrazení ikony GitHubu a odkazu vpravo:
+# Vypnutí výchozích sociálních prvků téma Midnight
 github_username: null
 
 collections:
   clanky:
     output: true
     permalink: /clanky/:title/
-  projekty:      # Tímto zakládáme novou sekci
+  projekty:
     output: true
     permalink: /projekty/:title/
-
 
