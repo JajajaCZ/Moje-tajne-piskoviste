@@ -261,3 +261,10 @@ h1, h2, h3, h4, h5, h6 {
 .hlavni-obsah-container .piskoviste-grid {
   padding: 0 !important; /* Vynuluje padding, protože ho drží nadřazený kontejner */
 }
+
+/* Vynulování vnitřního paddingu na podstránkách, aby lícovaly s indexem */
+.hlavni-obsah-container .page-content-wrapper {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+}
