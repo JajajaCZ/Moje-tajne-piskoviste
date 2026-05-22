@@ -44,6 +44,8 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 140px;
   }
 
+  
+
   .page-link {
     font-family: "Segoe UI", Roboto, sans-serif !important;
     font-weight: 500 !important;
@@ -83,6 +85,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 20px;
 }
 
+/* Sjednocení obsahu stránky s vnitřkem headeru */
+.page-content {
+  max-width: 1000px !important; /* Pevný strop, stejný jako vnitřní rozměr menu */
+  margin: 0 auto !important;    /* Magické slůvko 'auto' hodí celý blok doprostřed obrazovky */
+  padding: 20px !important;     /* Bezpečný odstup na mobilu, aby text neolizoval hrany */
+}
 /* ==========================================================================
    3. TVŮJ PŮVODNÍ DESIGN KARTIČEK (ZŮSTÁVÁ 100% STEJNÝ)
    ========================================================================== */
