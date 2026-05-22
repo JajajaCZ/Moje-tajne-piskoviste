@@ -249,3 +249,15 @@ h1, h2, h3, h4, h5, h6 {
   .site-nav .trigger { display: flex !important; }
   .site-nav .page-link { font-size: 1rem !important; margin-left: 15px !important; }
 }
+
+/* Společný zarovnávací kontejner pro index */
+.hlavni-obsah-container {
+  max-width: 1000px !important; /* Stejný limit jako má vnitřek menu */
+  margin: 0 auto !important;    /* Hodí celý blok (nadpisy i grid) na střed */
+  padding: 0 20px !important;   /* Ochrana pro okraje na mobilu */
+}
+
+/* Jemná pojistka pro samotný grid uvnitř obalu */
+.hlavni-obsah-container .piskoviste-grid {
+  padding: 0 !important; /* Vynuluje padding, protože ho drží nadřazený kontejner */
+}

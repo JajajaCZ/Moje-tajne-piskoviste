@@ -4,6 +4,8 @@ title: "Moje tajné pískoviště | Vítejte"
 permalink: /
 ---
 
+<div class="hlavni-obsah-container">
+
 # Vítejte na mém pískovišti
 
 {% assign vsechny_prispevky = site.clanky | concat: site.projekty | sort: "date" | reverse %}
@@ -33,4 +35,6 @@ permalink: /
       
     </div>
   {% endfor %}
+</div>
+
 </div>
