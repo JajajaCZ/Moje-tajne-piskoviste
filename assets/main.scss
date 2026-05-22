@@ -35,9 +35,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0 !important;
 
   .wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1000px !important; /* Přidáno !important */
+    margin: 0 auto !important;    /* Přidáno !important */
+    padding: 0 20px !important;   /* Změněno na 0 zvrchu/zespodu a přidáno !important */
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
