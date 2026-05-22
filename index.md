@@ -4,33 +4,39 @@ title: "Moje tajné pískoviště | Vítejte"
 permalink: /
 ---
 
-# Vítejte na mém pískovišti
+<div class="page-content-wrapper">
+  <div class="page-body">
 
-{% assign vsechny_prispevky = site.clanky | concat: site.projekty | sort: "date" | reverse %}
+    # Vítejte na mém pískovišti
 
-<h2 class="post-listing-heading">Nejnovější příspěvky</h2>
+    {% assign vsechny_prispevky = site.clanky | concat: site.projekty | sort: "date" | reverse %}
 
-<div class="piskoviste-grid">
-  {% for prispevek in vsechny_prispevky limit: 6 %}
-    <div class="piskoviste-karta {% if prispevek.collection == 'projekty' %}karta-projekt{% else %}karta-clanek{% endif %}">
-      
-      <div class="karta-meta">
-        <span class="karta-datum">{{ prispevek.date | date: "%d. %m. %Y" }}</span>
-        <span class="karta-tag">
-          {% if prispevek.collection == "projekty" %}🛠️ Projekt{% else %}📝 Článek{% endif %}
-        </span>
-      </div>
-      
-      <h3 class="karta-nadpis">
-        <a class="karta-link" href="{{ prispevek.url | relative_url }}">
-          {{ prispevek.title }}
-        </a>
-      </h3>
+    <h2 class="post-listing-heading">Nejnovější příspěvky</h2>
 
-      <p class="karta-anotace">
-        {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
-      </p>
-      
+    <div class="piskoviste-grid">
+      {% for prispevek in vsechny_prispevky limit: 6 %}
+        <div class="piskoviste-karta {% if prispevek.collection == 'projekty' %}karta-projekt{% else %}karta-clanek{% endif %}">
+          
+          <div class="karta-meta">
+            <span class="karta-datum">{{ prispevek.date | date: "%d. %m. %Y" }}</span>
+            <span class="karta-tag">
+              {% if prispevek.collection == "projekty" %}🛠️ Projekt{% else %}📝 Článek{% endif %}
+            </span>
+          </div>
+          
+          <h3 class="karta-nadpis">
+            <a class="karta-link" href="{{ prispevek.url | relative_url }}">
+              {{ prispevek.title }}
+            </a>
+          </h3>
+          
+          <p class="karta-anotace" style="margin-top: 4px;">
+            {{ prispevek.excerpt | strip_html | truncatewords: 12 }}
+          </p>
+          
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
+
+  </div>
 </div>
