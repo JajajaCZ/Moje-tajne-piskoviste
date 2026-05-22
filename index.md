@@ -6,7 +6,7 @@ permalink: /
 
 <div class="hlavni-obsah-container">
 
-# Vítejte na mém pískovišti
+<h1>Vítejte na mém pískovišti</h1>
 
 {% assign vsechny_prispevky = site.clanky | concat: site.projekty | sort: "date" | reverse %}
 
