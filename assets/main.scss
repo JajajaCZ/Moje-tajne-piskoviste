@@ -228,7 +228,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* MOBILNÍ RESPONSIVITA */
 @media (max-width: 768px) {
-  .piskoviste-grid { grid-template-columns: 1fr !important; }
+  .piskoviste-grid { 
+    grid-template-columns: 1fr !important; 
+    padding: 0 20px !important;
+  }
   .site-header .wrapper {
     padding: 5px 15px !important;
     min-height: 80px;
