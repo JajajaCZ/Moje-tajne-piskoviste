@@ -88,12 +88,12 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .piskoviste-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; 
+  grid-template-columns: repeat(3, 1fr) !important; 
   gap: 25px !important; 
-  margin: 30px 0 !important;
+  margin: 30px auto !important;
   clear: both !important;
-  max-width: 1000px !important;
-  padding: 0 20px !important;
+  max-width: 1000px !important; /* Maximální šířka, aby to lícovalo s menu */
+  padding: 0 20px !important;   /* Bezpečný odstup od krajů na PC i na mobilu */
 }
 
 .piskoviste-karta {
@@ -231,8 +231,7 @@ h1, h2, h3, h4, h5, h6 {
 /* MOBILNÍ RESPONSIVITA */
 @media (max-width: 768px) {
   .piskoviste-grid { 
-    grid-template-columns: 1fr !important; 
-    padding: 0 20px !important;
+    grid-template-columns: 1fr !important;
   }
   .site-header .wrapper {
     padding: 5px 15px !important;
